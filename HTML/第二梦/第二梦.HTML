@@ -1,0 +1,92 @@
+<!--
+ * @Author: Weidows
+ * @Date: 2020-06-19 23:23:56
+ * @LastEditors: Weidows
+ * @LastEditTime: 2020-08-08 09:45:32
+ * @FilePath: \Weidows\HTML\20-6\第二梦\第二梦.HTML
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第二场梦</title>
+  <style type="text/css">
+    #Weidows1 {
+      /* '#'就是访问ID */
+      color: green;
+    }
+
+    .group_1 {
+      font-size: 40px;
+      /* 40像素 */
+    }
+
+    .group_2 {
+      color: aqua;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 超链接 
+        href:指定链接地址
+        target:指定在哪里打开目标页面
+            _blank :在新窗口打开(最常用)
+            _self :在当前窗口打开(默认情况下)-->
+
+  <!-- 1.直接在当前页面跳转 -->
+  <a href="https://www.bilibili.com">
+    哔哩哔哩动画
+  </a>
+  <br /> <!-- 换行标签 -->
+
+  <!-- 2.在新页面跳转 -->
+  <a href="https://www.baidu.com" target="_blank">
+    百度
+  </a>
+  <br />
+
+  <!--3.调用本地HTML文件  -->
+  <a href="2.HTML" target="_blank">
+    跳转到 2.html
+  </a>
+  <br />
+
+  <!-- 4.调用其他目录下的HTML文件(每个../是退出一层路径) -->
+  <a href="../第一梦_head/梦的开始.HTML" target="_blank">
+    跳转到 第一梦
+  </a>
+  <br />
+  <!-- 超链接状态
+        1.未被访问link状态 ,蓝色下划线
+        2.已被访问visited状态 ,紫色下划线
+        3.鼠标指在链接上hover状态,下划线鼠标变化
+        4. 正在点击状态,active状态,文字变红下划线 
+        实际没用,肯定要用css重置样式-->
+  <!-- 属性:标准属性(几乎适用所有标签) && 特殊属性 -->
+  <!-- 1.标签的ID(标准,JS用的多) && class类(标准,常用)-->
+  <a id="Weidows1">
+    Weidows 1
+  </a>
+  <br />
+
+  <a id="Weidows2" class="group_1">
+    <!-- class类标签 -->
+    Weidows 2
+  </a>
+  <br />
+
+  <a id="Weidows3" class="group_1 group_2">
+    <!-- 多class类设置 -->
+    Weidows 3
+  </a>
+  <br />
+
+</body>
+
+</html>

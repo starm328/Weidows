@@ -1,0 +1,97 @@
+<!--
+ * @Author: Weidows
+ * @Date: 2020-08-11 09:16:30
+ * @LastEditors: Weidows
+ * @LastEditTime: 2020-08-13 11:00:45
+ * @FilePath: \Weidows\CSS\Study\选择器\选择器.HTML
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <!-- !标签选择器 -->
+  <style>
+    p {
+      color: deeppink;
+    }
+
+    div {
+      color: aqua;
+    }
+
+  </style>
+
+
+  <!-- !class选择器 会覆盖上面标签选择器的样式(即使顺序调换),开发常用-->
+  <style>
+    .Span {
+      color: chartreuse;
+    }
+
+  </style>
+
+
+  <!-- !class小案例 & 多类名-->
+  <style>
+    .Div {
+      width: 100px;
+      height: 100px;
+      font-size: 30px;
+    }
+
+    .Red {
+      background-color: red;
+    }
+
+    .Green {
+      /* 在多类名中重复指定样式的话,样式为最后指定的class类型 */
+      width: 200px;
+      height: 100px;
+      background-color: green;
+    }
+
+  </style>
+
+
+  <!-- !id选择器 覆盖权限最高,多用于修改页面单一元素,多与JavaScript结合使用-->
+  <style>
+    #Div-3 {
+      color: blueviolet;
+    }
+
+  </style>
+</head>
+
+
+<!-- !通配符选择器 权限较低-->
+<style>
+  * {
+    width: auto;
+  }
+  /* 另外可以给body{}设置样式,全局生效(除了标题标签特殊,必须指定设置) */
+</style>
+
+<body>
+  <!-- !class选择器 -->
+  <p>man</p>
+  <p>man</p>
+  <p>man</p>
+  <div>woman</div>
+  <div>woman</div>
+  <div class="Span">woman</div>
+  <span class="Span">123</span>
+  <span class="Span">123</span>
+  <span>123</span>
+
+  <!-- !class小案例 -->
+  <div class="Red Div">红1</div>
+  <div class="Green Div">绿1</div>
+  <div class="Red Div" id="Div-3">红2</div><!-- 通过这个可以看出id选择器权限最高 -->
+</body>
+
+</html>
