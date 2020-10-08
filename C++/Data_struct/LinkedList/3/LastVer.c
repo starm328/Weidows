@@ -2,277 +2,325 @@
  * @Author: Weidows
  * @Date: 2020-05-03 01:18:32
  * @LastEditors: Weidows
- * @LastEditTime: 2020-06-30 13:59:37
- * @FilePath: \demo\C++\Êı¾İ½á¹¹\Á´±í\3\ÖÕ¼«ÓÅ»¯°æµ¥ÏòÁ´±í.c
- * 3.ÖÕ¼«ÓÅ»¯°æµ¥ÏòÁ´±í
+ * @LastEditTime: 2020-10-03 22:29:49
+ * @FilePath: \Github\Weidows\C++\Data_struct\LinkedList\3\LastVer.c
+ * 3.ç»ˆæä¼˜åŒ–ç‰ˆå•å‘é“¾è¡¨
  */
 
-//¿â
-    #include<stdio.h>
-    #include<string.h>      //strcmpÓÃµ½
-    #include<stdlib.h>      //mallocÉêÇëÄÚ´æ,systemº¯Êıµ÷ÓÃ
-    #define LengthOfName 10
-    
-//º¯Êı && struct && typedef
-    typedef struct stu{
-        long long int id;                     //Á´±íÊı¾İÓò-Ñ§ºÅ
-        char name[LengthOfName];   //Á´±íÊı¾İÓò-ĞÕÃû
-        struct stu *next;                   //Á´±íÖ¸ÕëÓò,Ö¸ÏòÏÂÒ»¸ö½Úµã
-    } NODE;                                     //°Ñstruct stuÃüÃûÎªNODE
+//åº“
+#include <stdio.h>
+#include <stdlib.h> //mallocç”³è¯·å†…å­˜,systemå‡½æ•°è°ƒç”¨
+#include <string.h> //strcmpç”¨åˆ°
+#define LengthOfName 10
 
-    NODE *create_list(int); //³õÊ¼»¯Á´±í²¢Â¼ÈëµÚÒ»Åúint n¸ö½Úµã
-    void print(NODE *);     //¶Ô´«ÈëµÄÁ´±íÊä³ö
-    void insert_change_Node(NODE *, int); //¶Ô´«ÈëµÄÁ´±íµÄµÚint n¸ö½Úµã´¦²åÈë»òĞŞ¸Ä
-    void *list_reversed(NODE *);          //¶Ô´«ÈëµÄÁ´±íµ¹ÖÃ
-    void Delete_node(NODE *);          //¶Ô´«ÈëµÄÁ´±íÒÔĞòºÅ¡¢id¡¢nameÈıÖÖ·½Ê½É¸²éÉ¾³ı
-    int Node_length(NODE *);           //¶Ô´«ÈëµÄÁ´±íÍ³¼Æ½Úµã¸öÊı²¢·µ»Ø½ÚµãÊı
-    void Sort_List(NODE *);               //¶Ô´«ÈëµÄÁ´±í½øĞĞÃ°ÅİÅÅĞò
+//å‡½æ•° && struct && typedef
+typedef struct stu
+{
+  long long int id;        //é“¾è¡¨æ•°æ®åŸŸ-å­¦å·
+  char name[LengthOfName]; //é“¾è¡¨æ•°æ®åŸŸ-å§“å
+  struct stu *next;        //é“¾è¡¨æŒ‡é’ˆåŸŸ,æŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
+} NODE;                    //æŠŠstruct stuå‘½åä¸ºNODE
+
+NODE *create_list(int);               //åˆå§‹åŒ–é“¾è¡¨å¹¶å½•å…¥ç¬¬ä¸€æ‰¹int nä¸ªèŠ‚ç‚¹
+void print(NODE *);                   //å¯¹ä¼ å…¥çš„é“¾è¡¨è¾“å‡º
+void insert_change_Node(NODE *, int); //å¯¹ä¼ å…¥çš„é“¾è¡¨çš„ç¬¬int nä¸ªèŠ‚ç‚¹å¤„æ’å…¥æˆ–ä¿®æ”¹
+void *list_reversed(NODE *);          //å¯¹ä¼ å…¥çš„é“¾è¡¨å€’ç½®
+void Delete_node(NODE *);             //å¯¹ä¼ å…¥çš„é“¾è¡¨ä»¥åºå·ã€idã€nameä¸‰ç§æ–¹å¼ç­›æŸ¥åˆ é™¤
+int Node_length(NODE *);              //å¯¹ä¼ å…¥çš„é“¾è¡¨ç»Ÿè®¡èŠ‚ç‚¹ä¸ªæ•°å¹¶è¿”å›èŠ‚ç‚¹æ•°
+void Sort_List(NODE *);               //å¯¹ä¼ å…¥çš„é“¾è¡¨è¿›è¡Œå†’æ³¡æ’åº
 
 int main()
 {
-    //´´½¨³õÊ¼»¯
-        char *Choice_menu[5]={  //Ö¸ÕëÊı×é,×÷Îªº¯ÊıÑ¡Ôñ²Ëµ¥
-            "\n************************************************************",
-            "\n0: Êä³öÁ´±í/ÍË³ö.\t1:²åÈë/ĞŞ¸Ä½Úµã.\t2: µ¹ÖÃÁ´±í.",
-            "\n3: É¾³ı½Úµã\t\t4:Í³¼Æ½ÚµãÊı.\t\t5.°´IDÅÅĞò",
-            "\n************************************************************\n",
-            "\n                   µ¥ÏòÁ´±íÊı¾İ¹ÜÀíÏµÍ³\n",  //ºó¼ÓµÄ,ÀÁµÄ¸ÄË³ĞòÁË
-        };  
-        int n = 0, choice_num = -1;  //³õÊ¼»¯Ê±Á´±í½ÚµãÊın,Ö¸ÁîÊıchoice_num
-        system("cls");
-        printf("»¶Ó­Ê¹ÓÃ!\n%s%s", Choice_menu[4], Choice_menu[3]);
-        do{     //±£ÏÕÑ­»·,È·±£n>0
-            printf("ÊäÈëÁ´±í³õÊ¼»¯Òª´´½¨µÄ½Úµã¸öÊı: ");
-            scanf("%d", &n);
-        } while (n < 0);
-        NODE *Linked_list = create_list(n); //´Ë´¦´´½¨²¢Â¼ÈëµÚÒ»ÅúÊı¾İ,Á´±í³ÉĞÍ
+  //åˆ›å»ºåˆå§‹åŒ–
+  char *Choice_menu[5] = {
+      //æŒ‡é’ˆæ•°ç»„,ä½œä¸ºå‡½æ•°é€‰æ‹©èœå•
+      "\n************************************************************",
+      "\n0: è¾“å‡ºé“¾è¡¨/é€€å‡º.\t1:æ’å…¥/ä¿®æ”¹èŠ‚ç‚¹.\t2: å€’ç½®é“¾è¡¨.",
+      "\n3: åˆ é™¤èŠ‚ç‚¹\t\t4:ç»Ÿè®¡èŠ‚ç‚¹æ•°.\t\t5.æŒ‰IDæ’åº",
+      "\n************************************************************\n",
+      "\n                   å•å‘é“¾è¡¨æ•°æ®ç®¡ç†ç³»ç»Ÿ\n", //ååŠ çš„,æ‡’çš„æ”¹é¡ºåºäº†
+  };
+  int n = 0, choice_num = -1; //åˆå§‹åŒ–æ—¶é“¾è¡¨èŠ‚ç‚¹æ•°n,æŒ‡ä»¤æ•°choice_num
+  system("cls");
+  printf("æ¬¢è¿ä½¿ç”¨!\n%s%s", Choice_menu[4], Choice_menu[3]);
+  do
+  { //ä¿é™©å¾ªç¯,ç¡®ä¿n>0
+    printf("è¾“å…¥é“¾è¡¨åˆå§‹åŒ–è¦åˆ›å»ºçš„èŠ‚ç‚¹ä¸ªæ•°: ");
+    scanf("%d", &n);
+  } while (n < 0);
+  NODE *Linked_list = create_list(n); //æ­¤å¤„åˆ›å»ºå¹¶å½•å…¥ç¬¬ä¸€æ‰¹æ•°æ®,é“¾è¡¨æˆå‹
 
-    //¹¦ÄÜº¯Êıµ÷ÓÃ
-    while(choice_num!=0){   //³õÊ¼»¯Ê±¶¨ÒåÁËchoice_num
-        system("cls");
-        printf("%s %s %s %s %sÇëÊäÈëÏëÊµÏÖµÄ¹¦ÄÜĞòºÅ:",Choice_menu[4]
-            ,Choice_menu[0],Choice_menu[1],Choice_menu[2],Choice_menu[3]);
-        scanf("%d", &choice_num);
-        switch(choice_num){
-            case 0:{
-                printf("°´ÈÎÒâ¼üÊä³öÁ´±í »òÕßÊäÈë'Q'ÍË³ö³ÌĞò,ÇëÊäÈë:");
-                setbuf(stdin, NULL);    //Çå¿Õ»º³åÇø
-                char choice = getchar();
-                if(choice=='q' || choice=='Q')  //ÊäÈëe»òEÍË³öËùÓĞ
-                    printf("Ğ»Ğ»Ê¹ÓÃ!\t");
-                else{
-                    print(Linked_list);
-                    choice_num = 1; //ÖÃÓÚ·Ç0×´Ì¬,Ñ­»·³ÌĞò¼ÌĞø
-                }
-                break;
-            }
-            case 1:{
-                printf("ÇëÊäÈë¶ÔµÚ¼¸(N)ºÅ½Úµã²Ù×÷:");
-                int n = 0;
-                scanf("%d", &n);
-                insert_change_Node(Linked_list, n);
-                break;
-            }
-            case 2:{
-                list_reversed(Linked_list);
-                break;
-            }
-            case 3:{
-                Delete_node(Linked_list);
-                break;
-            }
-            case 4:{
-                printf("×Ü¼Æ½ÚµãÊıÎª %d ¸ö.\n", Node_length(Linked_list));
-                break;
-            }
-            case 5:{
-                Sort_List(Linked_list);
-                break;
-            }
-            default:{
-                printf("ÊäÈë´íÎó,ÇëÖØÊÔ.\n");
-                continue;
-            }
-        }
-        system("pause");    //ÔİÍ£,ÓÃÓÚÈ·ÈÏĞÅÏ¢
-        system("cls");          //ÇåÆÁ
+  //åŠŸèƒ½å‡½æ•°è°ƒç”¨
+  while (choice_num != 0)
+  { //åˆå§‹åŒ–æ—¶å®šä¹‰äº†choice_num
+    system("cls");
+    printf("%s %s %s %s %sè¯·è¾“å…¥æƒ³å®ç°çš„åŠŸèƒ½åºå·:", Choice_menu[4], Choice_menu[0], Choice_menu[1], Choice_menu[2], Choice_menu[3]);
+    scanf("%d", &choice_num);
+    switch (choice_num)
+    {
+    case 0:
+    {
+      printf("æŒ‰ä»»æ„é”®è¾“å‡ºé“¾è¡¨ æˆ–è€…è¾“å…¥'Q'é€€å‡ºç¨‹åº,è¯·è¾“å…¥:");
+      setbuf(stdin, NULL); //æ¸…ç©ºç¼“å†²åŒº
+      char choice = getchar();
+      if (choice == 'q' || choice == 'Q') //è¾“å…¥eæˆ–Eé€€å‡ºæ‰€æœ‰
+        printf("è°¢è°¢ä½¿ç”¨!\t");
+      else
+      {
+        print(Linked_list);
+        choice_num = 1; //ç½®äºé0çŠ¶æ€,å¾ªç¯ç¨‹åºç»§ç»­
+      }
+      break;
     }
-    return 0;   //±£ÏÕÆğ¼û°ÑÖÕÖ¹·ÅÔÚÍâÃæ
+    case 1:
+    {
+      printf("è¯·è¾“å…¥å¯¹ç¬¬å‡ (N)å·èŠ‚ç‚¹æ“ä½œ:");
+      int n = 0;
+      scanf("%d", &n);
+      insert_change_Node(Linked_list, n);
+      break;
+    }
+    case 2:
+    {
+      list_reversed(Linked_list);
+      break;
+    }
+    case 3:
+    {
+      Delete_node(Linked_list);
+      break;
+    }
+    case 4:
+    {
+      printf("æ€»è®¡èŠ‚ç‚¹æ•°ä¸º %d ä¸ª.\n", Node_length(Linked_list));
+      break;
+    }
+    case 5:
+    {
+      Sort_List(Linked_list);
+      break;
+    }
+    default:
+    {
+      printf("è¾“å…¥é”™è¯¯,è¯·é‡è¯•.\n");
+      continue;
+    }
+    }
+    system("pause"); //æš‚åœ,ç”¨äºç¡®è®¤ä¿¡æ¯
+    system("cls");   //æ¸…å±
+  }
+  return 0; //ä¿é™©èµ·è§æŠŠç»ˆæ­¢æ”¾åœ¨å¤–é¢
 }
 
-//Î²²å·¨´´½¨Á´±í(·µ»ØÍ· || Î²)
-    NODE *create_list(int n){
-        NODE *head, *node, *end;
-        head = (NODE *)malloc(sizeof(NODE));
-        end = head;
-        for (int i = 0; i < n;i++){
-            node = (NODE *)malloc(sizeof(NODE));
-            printf("·Ö±ğÊäÈëµÚ%d¸öID,name : ", i + 1);
-            scanf("%lld %s", &node->id, &node->name);
-            end->next = node;   //endÊÇÉÏ¸ö½Úµã,ÁîÆäÖ¸Ïòµ±Ç°½Úµã
-            end = node;             //ÈÃendÖ¸Ïòµ±Ç°½Úµã
-        }
-        end->next = NULL;
-        //Ñ¡Ôñ·µ»ØÖ¸Õë
-            printf("press any key return head\tor press 'e' to return end:");
-            setbuf(stdin, NULL);
-            char choice = getchar();
-            if(choice=='e' || choice=='E')
-                return end;
-            else
-                return head;
-    }
+//å°¾æ’æ³•åˆ›å»ºé“¾è¡¨(è¿”å›å¤´ || å°¾)
+NODE *create_list(int n)
+{
+  NODE *head, *node, *end;
+  head = (NODE *)malloc(sizeof(NODE));
+  end = head;
+  for (int i = 0; i < n; i++)
+  {
+    node = (NODE *)malloc(sizeof(NODE));
+    printf("åˆ†åˆ«è¾“å…¥ç¬¬%dä¸ªID,name : ", i + 1);
+    scanf("%lld %s", &node->id, &node->name);
+    end->next = node; //endæ˜¯ä¸Šä¸ªèŠ‚ç‚¹,ä»¤å…¶æŒ‡å‘å½“å‰èŠ‚ç‚¹
+    end = node;       //è®©endæŒ‡å‘å½“å‰èŠ‚ç‚¹
+  }
+  end->next = NULL;
+  //é€‰æ‹©è¿”å›æŒ‡é’ˆ
+  printf("press any key return head\tor press 'e' to return end:");
+  setbuf(stdin, NULL);
+  char choice = getchar();
+  if (choice == 'e' || choice == 'E')
+    return end;
+  else
+    return head;
+}
 
-//Êä³öÁ´±í
-    void print(NODE *head){
-        NODE *p = head->next; //for³õÊ¼Ìõ¼şÓòÄÚÎŞ·¨Í¬Ê±¶¨Òå¶à¸ö²»Í¬ÀàĞÍµÄ±äÁ¿
-        for (int i = 1; p != NULL; i++, p = p->next){
-            printf("µÚ%d¸ö½Úµã:%lld \t %s \n", i, p->id, p->name);
-        }
-    }
+//è¾“å‡ºé“¾è¡¨
+void print(NODE *head)
+{
+  NODE *p = head->next; //foråˆå§‹æ¡ä»¶åŸŸå†…æ— æ³•åŒæ—¶å®šä¹‰å¤šä¸ªä¸åŒç±»å‹çš„å˜é‡
+  for (int i = 1; p != NULL; i++, p = p->next)
+  {
+    printf("ç¬¬%dä¸ªèŠ‚ç‚¹:%lld \t %s \n", i, p->id, p->name);
+  }
+}
 
-//²åÈë(ºó²å) && ĞŞ¸ÄÁ´±í
-    void insert_change_Node(NODE *headList,int n){
-        NODE *p = headList;     //´´½¨NODEÀàĞÍµÄÒÆ¶¯Ö¸Õëp
-        for(int i=0;i<n;i++,p=p->next){
-            if(p->next==NULL){
-                printf("%dth node hasn't found!\t Input N again or press nothing  to exit :",n);
-                scanf("%d", &n);    //ÖØÖÃn
-                i = 0;
-                p = headList;   //¶¼ÖØÖÃ
-            }
-        } //ÅĞ¶ÏÊÇ·ñ´æÔÚ²¢°ÑpÖ¸ÏòµÚn½Úµã
-        while(1){
-            printf("insert or change node? input 'i' or 'c':");
-            setbuf(stdin, NULL);
-            char choice = getchar();
-            if(choice=='i' || choice=='I'){     //²åÈë
-                NODE *insertNode =(NODE *)malloc(sizeof(NODE));
-                printf("input id: ID & name :");
-                scanf("%lld %s", &insertNode->id, &insertNode->name);
-                insertNode->next = p->next;
-                p->next = insertNode;
-                break;
-            }else if(choice=='c'|| choice=='C'){    //ĞŞ¸Ä
-                printf("ÇëÊäÈëĞŞ¸ÄºóµÄÊı¾İ:");
-                scanf("%lld %s", &p->id, &p->name);
-                break;
-            }else{
-                printf("ÊäÈë´íÎó.ÇëÖØÊÔ.\n");
-                continue;
-            }
-        }
+//æ’å…¥(åæ’) && ä¿®æ”¹é“¾è¡¨
+void insert_change_Node(NODE *headList, int n)
+{
+  NODE *p = headList; //åˆ›å»ºNODEç±»å‹çš„ç§»åŠ¨æŒ‡é’ˆp
+  for (int i = 0; i < n; i++, p = p->next)
+  {
+    if (p->next == NULL)
+    {
+      printf("%dth node hasn't found!\t Input N again or press nothing  to exit :", n);
+      scanf("%d", &n); //é‡ç½®n
+      i = 0;
+      p = headList; //éƒ½é‡ç½®
     }
-    
-//µ¹ÖÃÁ´±í
-    void *list_reversed(NODE *List){
-        if(List==NULL || List->next==NULL) {    //±£Ö¤Á´±í·Ç¿Õ
-            printf("Á´±í¹ıĞ¡,ÎŞ·¨µ¹ÖÃ.\n");
-            return List;
-        }else{
-            NODE *backward = List->next,
-                 *temp = (List->next)->next,
-                 *forward = (List->next)->next;
-            while(forward!=NULL){
-                forward = forward->next;          //forwardÇ°½ø
-                temp->next = backward;   //Ö¸Õë·´×ª
-                backward = temp;           //backwardÇ°½ø
-                temp = forward;                    //tempÇ°½ø
-            }
-            (List->next)->next = NULL;  //Ô­µÚ¶ş¸ö½ÚµãÖ¸ÏòNULL
-            List->next = backward;
-        }
+  } //åˆ¤æ–­æ˜¯å¦å­˜åœ¨å¹¶æŠŠpæŒ‡å‘ç¬¬nèŠ‚ç‚¹
+  while (1)
+  {
+    printf("insert or change node? input 'i' or 'c':");
+    setbuf(stdin, NULL);
+    char choice = getchar();
+    if (choice == 'i' || choice == 'I')
+    { //æ’å…¥
+      NODE *insertNode = (NODE *)malloc(sizeof(NODE));
+      printf("input id: ID & name :");
+      scanf("%lld %s", &insertNode->id, &insertNode->name);
+      insertNode->next = p->next;
+      p->next = insertNode;
+      break;
     }
-    
-//É¾³ı½Úµã
-    void Delete_node(NODE *List){
-        NODE *pointer = List->next, *pointer_back = List; //´´½¨ÒÆ¶¯Ö¸Õë
-        long long int Del_num = 0, Del_id = 0;
-        char *Del_name = "", choice = 0;
-        while(choice==0){
-            printf("A: ½ÚµãĞòºÅ\tB: id\tC: name ÇëÊäÈëÉ¸²éÀàĞÍ:");
-            setbuf(stdin, NULL);
-            switch(choice=getchar()){
-                case 'a':
-                case 'A':{
-                    printf("ÊäÈëÒªÉ¾³ıµÄ½ÚµãĞòºÅ:");
-                    scanf("%lld", &Del_num);
-                    break;
-                }
-                case 'b':
-                case 'B':{
-                    printf("ÊäÈëÒªÉ¾³ı½ÚµãµÄid:");
-                    scanf("%lld", &Del_id);
-                    break;
-                }
-                case 'c':
-                case 'C':{
-                    printf("ÊäÈëÒªÉ¾³ı½ÚµãµÄname:");
-                    scanf("%s", &Del_name);
-                    break;
-                }
-                default:{
-                    printf("ÊäÈë´íÎó,ÇëÖØÊÔ.\n");
-                    choice = 0;
-                    continue;
-                }
-            }
-        }
-        for (int i = 1; pointer != NULL; i++,
-        pointer_back = pointer, pointer = pointer->next){   //Ò»Ö±Ïòºó¼ÆÊıÒÆ¶¯
-            if ( i == Del_num || pointer->id == Del_id ||
-            strcmp(Del_name, pointer->name)==0 ){
-                printf("Press any key to confirm deleting\t%dth node: %lld %s,\tor press 'E' to stop:",i,pointer->id,pointer->name);
-                setbuf(stdin, NULL);
-                choice=getchar();
-                if(choice=='e' || choice == 'E'){
-                    return;
-                }else{
-                    pointer_back->next = pointer->next;
-                    free(pointer);
-                    return;
-                }
-            }
-        }
-        printf("Appointed id not found!\n");
+    else if (choice == 'c' || choice == 'C')
+    { //ä¿®æ”¹
+      printf("è¯·è¾“å…¥ä¿®æ”¹åçš„æ•°æ®:");
+      scanf("%lld %s", &p->id, &p->name);
+      break;
     }
+    else
+    {
+      printf("è¾“å…¥é”™è¯¯.è¯·é‡è¯•.\n");
+      continue;
+    }
+  }
+}
 
-//Í³¼Æ½Úµã¸öÊı
-    int Node_length(NODE *Linked_list){
-        int cnt = 0;
-        while(Linked_list->next != NULL){
-            Linked_list = Linked_list->next;
-            cnt++;
-        }
-        return cnt;
+//å€’ç½®é“¾è¡¨
+void *list_reversed(NODE *List)
+{
+  if (List == NULL || List->next == NULL)
+  { //ä¿è¯é“¾è¡¨éç©º
+    printf("é“¾è¡¨è¿‡å°,æ— æ³•å€’ç½®.\n");
+    return List;
+  }
+  else
+  {
+    NODE *backward = List->next,
+         *temp = (List->next)->next,
+         *forward = (List->next)->next;
+    while (forward != NULL)
+    {
+      forward = forward->next; //forwardå‰è¿›
+      temp->next = backward;   //æŒ‡é’ˆåè½¬
+      backward = temp;         //backwardå‰è¿›
+      temp = forward;          //tempå‰è¿›
     }
+    (List->next)->next = NULL; //åŸç¬¬äºŒä¸ªèŠ‚ç‚¹æŒ‡å‘NULL
+    List->next = backward;
+  }
+}
 
-//¶ÔÁ´±íÖĞµÄÔªËØ½øĞĞÅÅĞò--Ã°ÅİÅÅĞò
-    void Sort_List(NODE *Linked_list){
-        for (NODE *p = Linked_list->next; p != NULL; p = p->next){
-            for (NODE *q = p->next; q != NULL; q = q->next){
-                if(p->id>q->id){
-                    int temp_id = p->id;
-                    p->id = q->id;
-                    q->id = temp_id;
-                    char temp_name[LengthOfName] = "";
-                    strcpy(temp_name, p->name); //strcpyÖĞ²»ÒªÓÃ*s±íÊ¾×Ö·û´®Êı×é
-                    strcpy(p->name, q->name);
-                    strcpy(q->name, temp_name);
-
-                    /*´íÎó½»»»½Úµã  */
-                        // NODE *temp_1 = q;
-                        // NODE *temp_2 = q_former;
-                        // q_former->next = p_former->next;
-                        // q->next = p->next;
-                        // p->next = temp_1->next;
-                        // p_former->next = temp_2->next;
-
-                    /*¶şÎ¬Ö¸ÕëÈİÒ×³ö´í(ÈçÏÂ) */
-                        // char **str_1 = (char *)&p->name, **str_2 = (char *)&q->name, **str_temp = (char *)&p->name;
-                        // str_1 = str_2;
-                        // str_2 = str_temp;
-                }
-            }
-        }
+//åˆ é™¤èŠ‚ç‚¹
+void Delete_node(NODE *List)
+{
+  NODE *pointer = List->next, *pointer_back = List; //åˆ›å»ºç§»åŠ¨æŒ‡é’ˆ
+  long long int Del_num = 0, Del_id = 0;
+  char *Del_name = "", choice = 0;
+  while (choice == 0)
+  {
+    printf("A: èŠ‚ç‚¹åºå·\tB: id\tC: name è¯·è¾“å…¥ç­›æŸ¥ç±»å‹:");
+    setbuf(stdin, NULL);
+    switch (choice = getchar())
+    {
+    case 'a':
+    case 'A':
+    {
+      printf("è¾“å…¥è¦åˆ é™¤çš„èŠ‚ç‚¹åºå·:");
+      scanf("%lld", &Del_num);
+      break;
     }
+    case 'b':
+    case 'B':
+    {
+      printf("è¾“å…¥è¦åˆ é™¤èŠ‚ç‚¹çš„id:");
+      scanf("%lld", &Del_id);
+      break;
+    }
+    case 'c':
+    case 'C':
+    {
+      printf("è¾“å…¥è¦åˆ é™¤èŠ‚ç‚¹çš„name:");
+      scanf("%s", &Del_name);
+      break;
+    }
+    default:
+    {
+      printf("è¾“å…¥é”™è¯¯,è¯·é‡è¯•.\n");
+      choice = 0;
+      continue;
+    }
+    }
+  }
+  for (int i = 1; pointer != NULL; i++,
+           pointer_back = pointer, pointer = pointer->next)
+  { //ä¸€ç›´å‘åè®¡æ•°ç§»åŠ¨
+    if (i == Del_num || pointer->id == Del_id ||
+        strcmp(Del_name, pointer->name) == 0)
+    {
+      printf("Press any key to confirm deleting\t%dth node: %lld %s,\tor press 'E' to stop:", i, pointer->id, pointer->name);
+      setbuf(stdin, NULL);
+      choice = getchar();
+      if (choice == 'e' || choice == 'E')
+      {
+        return;
+      }
+      else
+      {
+        pointer_back->next = pointer->next;
+        free(pointer);
+        return;
+      }
+    }
+  }
+  printf("Appointed id not found!\n");
+}
+
+//ç»Ÿè®¡èŠ‚ç‚¹ä¸ªæ•°
+int Node_length(NODE *Linked_list)
+{
+  int cnt = 0;
+  while (Linked_list->next != NULL)
+  {
+    Linked_list = Linked_list->next;
+    cnt++;
+  }
+  return cnt;
+}
+
+//å¯¹é“¾è¡¨ä¸­çš„å…ƒç´ è¿›è¡Œæ’åº--å†’æ³¡æ’åº
+void Sort_List(NODE *Linked_list)
+{
+  for (NODE *p = Linked_list->next; p != NULL; p = p->next)
+  {
+    for (NODE *q = p->next; q != NULL; q = q->next)
+    {
+      if (p->id > q->id)
+      {
+        int temp_id = p->id;
+        p->id = q->id;
+        q->id = temp_id;
+        char temp_name[LengthOfName] = "";
+        strcpy(temp_name, p->name); //strcpyä¸­ä¸è¦ç”¨*sè¡¨ç¤ºå­—ç¬¦ä¸²æ•°ç»„
+        strcpy(p->name, q->name);
+        strcpy(q->name, temp_name);
+
+        /*é”™è¯¯äº¤æ¢èŠ‚ç‚¹  */
+        // NODE *temp_1 = q;
+        // NODE *temp_2 = q_former;
+        // q_former->next = p_former->next;
+        // q->next = p->next;
+        // p->next = temp_1->next;
+        // p_former->next = temp_2->next;
+
+        /*äºŒç»´æŒ‡é’ˆå®¹æ˜“å‡ºé”™(å¦‚ä¸‹) */
+        // char **str_1 = (char *)&p->name, **str_2 = (char *)&q->name, **str_temp = (char *)&p->name;
+        // str_1 = str_2;
+        // str_2 = str_temp;
+      }
+    }
+  }
+}

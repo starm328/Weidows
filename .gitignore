@@ -3,6 +3,4 @@ Thumbs.db
 db.json
 *.log
 
-.vscode
 Java/target/classes
-Weidows.code-workspace

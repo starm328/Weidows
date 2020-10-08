@@ -2,143 +2,156 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:29:29
  * @LastEditors: Weidows
- * @LastEditTime: 2020-06-10 22:54:31
- * @FilePath: \demo\C_\2_2020-4\5.string¿âÓëº¯Êıµ÷ÓÃĞ¡µ÷ÊÔ.c
- */ 
-//¿â
-    #include<stdio.h>
-    #include<stdlib.h>//malloc
-    #include <string.h>
+ * @LastEditTime: 2020-10-08 00:06:16
+ * @FilePath: \Github\Weidows\C++\Study\2020-4\5.stringåº“ä¸å‡½æ•°è°ƒç”¨å°è°ƒè¯•.c
+ * 
+ * strlen; strcmp; strcpy; strcat; strchr; strstr;è®²è§£
+ */
+//åº“
+#include <stdio.h>
+#include <stdlib.h> //malloc
+#include <string.h>
 
-//strlen; strcmp; strcpy; strcat; strchr; strstr;½²½â
-    /*Îª·ÀÖ¹Ô½½ç(ÓÃnÏŞÖÆ)ÓĞ°²È«°æ±¾µÄstrncpy & strncat & strncmp
+/*///ä¸ºé˜²æ­¢è¶Šç•Œ(ç”¨né™åˆ¶)æœ‰å®‰å…¨ç‰ˆæœ¬çš„strncpy & strncat & strncmp
         char *strncpy(char *restrict dst,const char *restrict src,size_t n);
         char *strncat(char *restrict s1,const char *restrict s2,size_t n);
         int strncmp(const char *s1,const char *s2,size_t n);*/
-    int strlen_test_like(const char *test,const char *like){
-        printf("sizeof=%d  ", sizeof(test)); //Êı×é´óĞ¡
-        printf("strlen=%d  ", strlen(test)); //×Ö·û³¤¶È
 
-        int cnt = 0;//¼ÆÊı¾ı³£ÓÃÃû×Ö
-        int idx = 0;//¾ÍÊÇ³£ÓÃµÄi
-        while (like[idx]!='\0'){
-            cnt++;
-            idx++;
-        } //´ËÑ­»·cnt¶àÓà¿ÉÒÔÉ¾È¥,ÏÂÃæreturn idx;Ò²ÊÇ¶ÔµÄ
-        return cnt;
-    } //·ÂÖÆµÄstrlen(),×Ö·û´®ºÍÊı×é¶¼ÄÜÓÃ*s±íÊ¾,Í³Ò»Ğ´³É*s
+//ä»¿åˆ¶çš„strlen(),å­—ç¬¦ä¸²å’Œæ•°ç»„éƒ½èƒ½ç”¨*sè¡¨ç¤º,ç»Ÿä¸€å†™æˆ*s
+int strlen_test_like(const char *test, const char *like)
+{
+  printf("sizeof=%d\t strlen=%d\t", sizeof(test), strlen(test)); //æ•°ç»„å¤§å°&å­—ç¬¦é•¿åº¦
 
-    int strcmp_like(const char *a,const char *b){
-        //·½·¨Ò»,Õı³£Ì×Â·(Êı×é)
-            // int idx = 0;
-            // while (a[idx] == b[idx] && a[idx] != '\0'){idx++;}
-            // //´Ë´¦×¢Òâ²»ÄÜĞ´³Éa == b != cÕâÖÖÈıÁ¬Ê½
-            // return a[idx] - b[idx];
+  int cnt = 0; //è®¡æ•°å›å¸¸ç”¨åå­—
+  int idx = 0; //å°±æ˜¯å¸¸ç”¨çš„i
+  while (like[idx] != '\0')
+  {
+    cnt++; //æ­¤å¾ªç¯cntå¤šä½™å¯ä»¥åˆ å»,ä¸‹é¢return idx;ä¹Ÿæ˜¯å¯¹çš„
+    idx++;
+  }
+  return cnt;
+}
 
-        //·½·¨¶ş,ÔËÓÃÖ¸ÕëµÄÆæÒùÃî¼Æ
-            while(*a == *b && *a != '\0'){*a++;*b++;}
-            return *a - *b;
+//ä»¿åˆ¶çš„strcmp()
+int strcmp_like(const char *a, const char *b)
+{
+  //æ–¹æ³•ä¸€,æ­£å¸¸å¥—è·¯(æ•°ç»„)
+  // int idx = 0;
+  // while (a[idx] == b[idx] && a[idx] != '\0'){idx++;}
+  // //æ­¤å¤„æ³¨æ„ä¸èƒ½å†™æˆa == b != cè¿™ç§ä¸‰è¿å¼
+  // return a[idx] - b[idx];
 
-    }//·ÂÖÆµÄstrcmp()
+  //æ–¹æ³•äºŒ,è¿ç”¨æŒ‡é’ˆçš„å¥‡æ·«å¦™è®¡
+  while (*a == *b && *a != '\0')
+  {
+    *a++;
+    *b++;
+  }
+  return *a - *b;
+}
 
-    char* strcpy_test_like(const char *src,char *dstlike){
-        char *dst = (char*)malloc(strlen(src) + 1);
-        printf("¸´ÖÆÇ°a= %s", dst);//fÎ´³õÊ¼»¯,ÄÚÈİËæ»ú
-        printf("  ¸´ÖÆºóa= %s  ", strcpy(dst, src)); //°Ñb¸´ÖÆ¸øa,²¢ÇÒ·µ»Øa
-        /*strcpyÊÇÓÃÓÚ¸´ÖÆ,ÅäºÏÉÏ·½mallocÊ¹ÓÃ,¾¡Á¿²»ÒªÓÃÓÚ×Ö·û´®
-        ×ªÖÃ(dst<-src),³£ÓÉÓÚÄÚ´æµØÖ·¿ÉÄÜÁ¬Ğøµ¼ÖÂ²»±ØÒª±¨´í,*/
-        free(dst);//Îñ±Ø¼Ç×¡freeÊÍ·ÅÄÚ´æ
-        
-        //like_1Êı×é
-            // int idx = 0;
-            // while(src[idx]!= '\0'){
-            //     dstlike[idx] = src[idx];
-            //     idx++;}
-            // dst[idx] = '\0';
-            // return dstlike;
-        //like_2Ö¸Õë
-            char *ret = dstlike;/*ÓÉÓÚ++²Ù×÷Ê¹dstlikeÅÜÆ«,¹ÊĞèret
-            ´úÌæ(ÏñÊÇ¸´ÖÆÖ¸Õë),Éæ¼°ÒÆ¶¯Ö¸ÕëÊ±ºÜ¿ÉÄÜÓÃµ½!!!!!!*/
-            while(*dstlike++ = *src++);/*ÏÈ*dstlike=*src,È»ºó++,
-            ¸³Öµ±í´ïÊ½µÄÖµ¾ÍÊÇ*srcµÄÖµ,µÈĞ§ÓÚ*src != '\0'*/
-            *dstlike = '\0';
-            return ret;//ÕâÀïÌáÊ¾²»Ìá³«¶à³ö¿Ú,´Ë´¦ÎŞÄÎ
-    } //ĞèÒª×¢Òâ´«ÈëstrcpyµÄÁ½¸ö²ÎÊı²»ÄÜÓĞÖØµşµØÖ·(*restrict)
+//éœ€è¦æ³¨æ„ä¼ å…¥strcpyçš„ä¸¤ä¸ªå‚æ•°ä¸èƒ½æœ‰é‡å åœ°å€(*restrict)
+char *strcpy_test_like(const char *src, char *dstlike)
+{
+  char *dst = (char *)malloc(strlen(src) + 1);
+  printf("å¤åˆ¶å‰e=%s\t å¤åˆ¶åe=%s\t", dst, strcpy(dst, src));
+  /**
+   * strcpyæ˜¯ç”¨äºå¤åˆ¶,é…åˆä¸Šæ–¹mallocä½¿ç”¨,å°½é‡ä¸è¦ç”¨äºå­—ç¬¦ä¸²è½¬ç½®(dst<-src)
+   * å¸¸ç”±äºå†…å­˜åœ°å€å¯èƒ½è¿ç»­å¯¼è‡´ä¸å¿…è¦æŠ¥é”™
+  */
+  free(dst); //åŠ¡å¿…è®°ä½freeé‡Šæ”¾å†…å­˜
 
-    void strcat_test(char *restrict s1,char *s3,char *restrict s2){
-        s1 = (char *)malloc(strlen(s1) + strlen(s2) + 2);//s1Ô­×Ö·û´®Ê§Ğ§
-        //s1 = "Hello";ÕâÑùÓÖ»á°Ñs1ÏŞÖÆ»áÔ­´óĞ¡,¹ÊĞèµÚÈı·½*s
-        strcpy(s1, s3);//»Ö¸´s1×Ö·û´®
-        printf("s1+s2=%s\n",strcat(s1, s2));//°Ñs2½Óµ½s1ºóÃæ,²¢·µ»Øs1(¹»´ó)
-        free(s1);
-    }
-    void strchr_test(char *s,char c,int n){
-        //ÕıĞòÕÒ
-            printf("µØÖ·:%d  ", strchr(s, c));
-            printf("×Ö·û:%c  ", *strchr(s, c));
-        //µ¹ĞòÕÒ
-            printf("µØÖ·:%d  ", strrchr(s, c));
-            printf("×Ö·û:%c  ", *strrchr(s,c));
-            printf("Æäºó×Ö·û´®:%s\n",strrchr(s, c));
-        //ÕÒµÚn¸öchar c
-            char *p = s;//Éæ¼°ÒÆ¶¯Ö¸ÕëÇ°¸´ÖÆÖ¸Õë
-            p = strchr(p, c);//ÏÈ¶¨Î»µÚÒ»¸ö
-            int i = 1;
-            while(i<n){
-                p = strchr(p + 1, c);
-                i++;}
-            printf("µÚ%d¸ö%cµØÖ·:%d , Æäºó×Ö·û:%s\n",n,c, p,p);
-        //Êä³öchar cÇ°µÄ×Ö·û´®
-            // char *s1 = strchr(s, c);
-            // *s1 = '\0';
-            // printf("%cÖ®Ç°µÄ×Ö·û´®:%s\n", c, s);
-            // *s1 = c; ÒÔÉÏÏëµÃÍ¨µ«ĞĞ²»Í¨(ÎŞ·¨Ö±½ÓĞŞ¸Äs)
+  ///like_1æ•°ç»„
+  // int idx = 0;
+  // while (src[idx] != '\0')
+  // {
+  //   dstlike[idx] = src[idx];
+  //   idx++;
+  // }
+  // dst[idx] = '\0';
+  // return dstlike;
 
-            char *s1 = (char *)malloc(strlen(s) + 1);
-            strcpy(s1, s);
-            char *s2 = strchr(s1, c);
-            *s2 = '\0';
-            printf("%cÖ®Ç°µÄ×Ö·û´®:%s\n", c, s1);
-            free(s1);//ÔÚÉêÇëÀ´µÄÄÚ´æÖĞ¶Ô¸´ÖÆÀ´µÄs1¶¯µ¶
-    }
+  ///like_2æŒ‡é’ˆ
+  /*ç”±äº++æ“ä½œä½¿dstlikeè·‘å,æ•…éœ€retä»£æ›¿(åƒæ˜¯å¤åˆ¶æŒ‡é’ˆ),æ¶‰åŠç§»åŠ¨æŒ‡é’ˆæ—¶å¾ˆå¯èƒ½ç”¨åˆ°!!!!!!*/
+  char *ret = dstlike;
+  while (*dstlike++ = *src++)
+    ; /*å…ˆ*dstlike=*src,ç„¶å++,èµ‹å€¼è¡¨è¾¾å¼çš„å€¼å°±æ˜¯*srcçš„å€¼,ç­‰æ•ˆäº*src != '\0'*/
+  *dstlike = '\0';
+  return ret;
+}
 
-int main(int argc,char const *argv[]){
-    int a = 0;
-    //putchar() & getchar() & gets()
-        // a = getchar();//¼ÇºÃ½ÓÊÕ·½Ê½
-        // putchar(a);
-        // /*º¯ÊıÔ­ĞÍint getchar((int) char) Ö»µ¥µ¥½ÓÊÕÒ»¸ö×Ö·û
-        //                 int putchar(void)*/
-        // char *b;//ÕâÑù¶¨Òå¿ÉÒÔµ±×ö×Ö·û´®Êı×éÓÃ
-        // gets(b);//×Ö·û´®ÖĞÓĞ¿Õ¸ñÊ±,scanf¾Í¼¦ÀßÁË,gets×¨Òµ¶ÁÈ¡×Ö·û´®
-        // printf("%s\n",b);
-    
-    char *c = "Hello"; char *d = "Hello";
-    char *e = "World";
-    //test here!
-        //strlen_test & strlen_like¿ªÊ¼
-            printf("strlen_like=%d\n", strlen_test_like(c,c));
+void strcat_test(char *restrict s1, char *restrict s2)
+{
+  char* s3 = s1; //ä¸‹é¢æ˜¯æ‰©å……s1å¤§å°,ä¼šä½¿s1å¤±æ•ˆ,s3ç”¨ä½œå¤‡ä»½
+  s1 = (char *)malloc(strlen(s1) + strlen(s2) + 1); //s1åŸå­—ç¬¦ä¸²å¤±æ•ˆ
+  strcpy(s1, s3);                     //æ¢å¤s1å­—ç¬¦ä¸²
+  printf("d + e =%s\n", strcat(s1, s2)); //æŠŠs2æ¥åˆ°s1åé¢,å¹¶è¿”å›s1(å¤Ÿå¤§)
+  free(s1);
+}
+void strchr_test(char *s, char c, int n)
+{
+  //æ­£åºæ‰¾
+  printf("åœ°å€:%d  ", strchr(s, c));
+  printf("å­—ç¬¦:%c  ", *strchr(s, c));
+  //å€’åºæ‰¾
+  printf("åœ°å€:%d  ", strrchr(s, c));
+  printf("å­—ç¬¦:%c  ", *strrchr(s, c));
+  printf("å…¶åå­—ç¬¦ä¸²:%s\n", strrchr(s, c));
+  //æ‰¾ç¬¬nä¸ªchar c
+  char *p = s;      //æ¶‰åŠç§»åŠ¨æŒ‡é’ˆå‰å¤åˆ¶æŒ‡é’ˆ
+  p = strchr(p, c); //å…ˆå®šä½ç¬¬ä¸€ä¸ª
+  int i = 1;
+  while (i < n)
+  {
+    p = strchr(p + 1, c);
+    i++;
+  }
+  printf("ç¬¬%dä¸ª%cåœ°å€:%d , å…¶åå­—ç¬¦:%s\n", n, c, p, p);
+  //è¾“å‡ºchar cå‰çš„å­—ç¬¦ä¸²
+  // char *s1 = strchr(s, c);
+  // *s1 = '\0';
+  // printf("%cä¹‹å‰çš„å­—ç¬¦ä¸²:%s\n", c, s);
+  // *s1 = c; ä»¥ä¸Šæƒ³å¾—é€šä½†è¡Œä¸é€š(æ— æ³•ç›´æ¥ä¿®æ”¹s)
 
-        //
-        //strcmp  test,·µ»ØÖµ:0 c=d, Õıc>d, ¸ºc<d
-            printf("strcmp(c,d)=%d  ", strcmp(c, d));
-            printf("strcmp_like(c, d)=%d  ", strcmp_like(c, d));
-            printf("strcmp_like(c, e)=%d\n", strcmp_like(c, e));
+  char *s1 = (char *)malloc(strlen(s) + 1);
+  strcpy(s1, s);
+  char *s2 = strchr(s1, c);
+  *s2 = '\0';
+  printf("%cä¹‹å‰çš„å­—ç¬¦ä¸²:%s\n", c, s1);
+  free(s1); //åœ¨ç”³è¯·æ¥çš„å†…å­˜ä¸­å¯¹å¤åˆ¶æ¥çš„s1åŠ¨åˆ€
+}
 
-        //
-        //strcpy  test & like¿ªÊ¼²Ù×÷
-            char *f = (char *)malloc(strlen(e) + 1);
-            printf("¸´ÖÆÇ°f=%s  ", f);
-            printf("¸´ÖÆºóf=%s\n", strcpy_test_like(e,f));
+int main(int argc, char const *argv[])
+{
+  /**
+   * ? putchar() & getchar() & gets() & puts()
+   *    char a = getchar(); //è®°å¥½æ¥æ”¶æ–¹å¼
+   *    putchar(a); //è¾“å‡ºæ–¹å¼(å•å­—ç¬¦)
+   * 
+   *    char *b;//è¿™æ ·å®šä¹‰å¯ä»¥å½“åšå­—ç¬¦ä¸²æ•°ç»„ç”¨(å½“åšå‡½æ•°çš„å‚æ•°ä¼ å…¥æ—¶å¿…é¡»å·²è¢«declare)
+   *    gets(b);//å­—ç¬¦ä¸²ä¸­æœ‰ç©ºæ ¼æ—¶,scanfå°±é¸¡è‚‹äº†,getsä¸“ä¸šè¯»å–å­—ç¬¦ä¸²(ä½†*bè¿™ç§æ–¹å¼ä¼šå‡ºé”™)
+   *    puts(b);  //è¾“å‡ºå­—ç¬¦ä¸²
+   */
 
-        //
-        //strcat¿ªÊ¼
-            strcat_test(c, d, e);
-            
-        //
-        //strchr(const char *,int)·µ»ØÖµÀàĞÍÎªintµÄÖ¸Õë,Ã»ÕÒµ½(NULL)
-            strchr_test(c,'l',2);
-            printf("\'el\'ºóµÄ×Ö·û´®%s\n", strstr(d, "el"));//ÕÒ×Ö·û´®
+  char *c = "Hello", *d = "Hello", *e = "World";
 
-    return 0;
+  //åˆå§‹åŒ–å®Œæˆ,test here!
+  //strlen_test & strlen_likeå¼€å§‹
+  printf("strlen_like=%d\n", strlen_test_like(c, c));
+
+  //strcmp  test,è¿”å›å€¼:0 c=d, æ­£c>d, è´Ÿc<d
+  printf("strcmp(c,d)=%d\t strcmp_like(c, d)=%d\t strcmp_like(c, e)=%d\n", strcmp(c, d), strcmp_like(c, d), strcmp_like(c, e));
+
+  //strcpy  test & likeå¼€å§‹æ“ä½œ
+  char *f = (char *)malloc(strlen(e) + 1);
+  printf("å¤åˆ¶å‰f=%s\t å¤åˆ¶åf=%s\n", f, strcpy_test_like(e, f));
+
+  //strcatå¼€å§‹
+  strcat_test(d, e);
+
+  //strchr(const char *,int)è¿”å›å€¼ç±»å‹ä¸ºintçš„æŒ‡é’ˆ,æ²¡æ‰¾åˆ°(NULL)
+  strchr_test(c, 'l', 2);
+  printf("\'el\'åçš„å­—ç¬¦ä¸²%s\n", strstr(d, "el")); //æ‰¾å­—ç¬¦ä¸²
+
+  return 0;
 }
