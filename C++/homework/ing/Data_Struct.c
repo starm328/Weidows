@@ -2,8 +2,8 @@
  * @Author: Weidows
  * @Date: 2020-09-25 19:40:22
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-08 16:29:39
- * @FilePath: \Github\Weidows\C++\homework\ing\字符串连接\str_combine.c
+ * @LastEditTime: 2020-10-09 16:22:18
+ * @FilePath: \Github\Weidows\C++\homework\ing\数据结构.c
  * 
  * 
  * 
@@ -91,7 +91,7 @@ int calculate(int n)
 //main
 int main()
 {
-  //1.
+  // 1.
   // char *s1 = "Hello", *s2 = "World";
   // printf("%s\n", str_combine(s1, s2));
 
