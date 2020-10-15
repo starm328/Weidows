@@ -2,8 +2,8 @@
  * @Author: Weidows
  * @Date: 2020-07-20 18:40:10
  * @LastEditors: Weidows
- * @LastEditTime: 2020-07-24 13:23:07
- * @FilePath: \Weidows\Java\src\main\java\twenty\july\my_interface\fox_and_rabbit\FoxAndRabbit.java
+ * @LastEditTime: 2020-10-15 23:14:57
+ * @FilePath: \Github\Weidows\Java\src\main\java\twenty\july\my_interface\fox_and_rabbit\FoxAndRabbit.java
  */
 package twenty.july.my_interface.fox_and_rabbit;
 
@@ -11,9 +11,13 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-import twenty.july.my_interface.animal.*;
+import twenty.july.my_interface.animal.Animal;
+import twenty.july.my_interface.animal.Fox;
+import twenty.july.my_interface.animal.Rabbit;
 import twenty.july.my_interface.cell.Cell;
-import twenty.july.my_interface.field.*;
+import twenty.july.my_interface.field.Field;
+import twenty.july.my_interface.field.Location;
+import twenty.july.my_interface.field.View;
 
 public class FoxAndRabbit {
   private Field theField;

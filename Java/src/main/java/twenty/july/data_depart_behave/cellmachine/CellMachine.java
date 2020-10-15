@@ -2,15 +2,16 @@
 * @Author: Weidows
 * @Date: 2020-07-12 11:52:59
  * @LastEditors: Weidows
- * @LastEditTime: 2020-07-20 08:30:26
- * @FilePath: \Weidows\Java\src\main\java\twenty\july\data_depart_behave\cellmachine\CellMachine.java
+ * @LastEditTime: 2020-10-15 23:11:47
+ * @FilePath: \Github\Weidows\Java\src\main\java\twenty\july\data_depart_behave\cellmachine\CellMachine.java
 */ 
 package twenty.july.data_depart_behave.cellmachine;
 
 import javax.swing.JFrame;
+
 import twenty.july.data_depart_behave.cell.Cell;
-import twenty.july.data_depart_behave.field.View;
 import twenty.july.data_depart_behave.field.Field;
+import twenty.july.data_depart_behave.field.View;
 
 public class CellMachine {
     public static void main(String[] args) {

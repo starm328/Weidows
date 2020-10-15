@@ -2,8 +2,8 @@
  * @Author: Weidows
  * @Date: 2020-07-12 15:17:05
  * @LastEditors: Weidows
- * @LastEditTime: 2020-07-20 08:29:24
- * @FilePath: \Weidows\Java\src\main\java\twenty\july\data_depart_behave\cell\Cell.java
+ * @LastEditTime: 2020-10-15 22:40:13
+ * @FilePath: \Github\Weidows\Java\src\main\java\twenty\july\data_depart_behave\cell\Cell.java
  */ 
 
 package twenty.july.data_depart_behave.cell;

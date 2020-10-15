@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-07 19:33:52
  * @FilePath: \Github\Weidows\Java\src\main\java\test\homework\student\Student.java
  */
-package main.java.test.homework.student;
+package test.homework.student;
 
 public class Student {
   private String name;
