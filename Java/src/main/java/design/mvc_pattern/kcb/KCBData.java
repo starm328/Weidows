@@ -2,18 +2,16 @@
  * @Author: Weidows
  * @Date: 2020-07-25 18:53:43
  * @LastEditors: Weidows
- * @LastEditTime: 2020-07-25 19:14:02
- * @FilePath: \Weidows\Java\src\main\java\twenty\july\class_schedule\KCBData.java
- */ 
-package twenty.july.class_schedule.kcb;
+ * @LastEditTime: 2020-10-16 20:11:58
+ * @FilePath: \Weidows\Java\src\main\java\design\mvc_pattern\kcb\KCBData.java
+ */
+package design.mvc_pattern.kcb;
 
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 
 public class KCBData implements TableModel {
-  private String[] title={
-    "周一","周二","周三","周四","周五","周六","周日",
-  };
+  private String[] title = { "周一", "周二", "周三", "周四", "周五", "周六", "周日", };
   private String[][] data = new String[8][7];
 
   public KCBData() {

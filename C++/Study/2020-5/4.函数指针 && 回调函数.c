@@ -3,9 +3,9 @@
  * @Date: 2020-05-29 00:40:17
  * @LastEditors: Weidows
  * @LastEditTime: 2020-05-29 00:40:17
- * @FilePath: \demo\C\5.º¯ÊıÖ¸Õë && »Øµ÷º¯Êı.c
+ * @FilePath: \demo\C\5.å‡½æ•°æŒ‡é’ˆ && å›è°ƒå‡½æ•°.c
  */ 
-//º¯ÊıÖ¸Õë && »Øµ÷º¯Êı
+//å‡½æ•°æŒ‡é’ˆ && å›è°ƒå‡½æ•°
 
 #include <stdio.h>
 #include<stdlib.h>
@@ -27,16 +27,16 @@ void populate_array(int array[],size_t arraySize,int (*p)(void)){
 
 int main()
 {
-    //º¯ÊıÖ¸Õë
-        // int (*p)(int, int) = &max;  //¶¨ÒåÒ»¸öº¯ÊıÖ¸Õë
+    //å‡½æ•°æŒ‡é’ˆ
+        // int (*p)(int, int) = &max;  //å®šä¹‰ä¸€ä¸ªå‡½æ•°æŒ‡é’ˆ
         // int a, b, c, d;
-        // printf("ÊäÈëÈı¸öÊı:");
+        // printf("è¾“å…¥ä¸‰ä¸ªæ•°:");
         // scanf("%d%d%d", &a, &b, &c);
         // d = p(p(a, b), c);
-        // printf("×î´óÊıÊÇ:%d", d);
-    //»Øµ÷º¯Êı
+        // printf("æœ€å¤§æ•°æ˜¯:%d", d);
+    //å›è°ƒå‡½æ•°
         int myArray[10];
-        populate_array(myArray, 10, getNextRandomValue);//get..²»ÄÜ´øÀ¨ºÅ,ÄÇÊÇµ÷ÓÃ
+        populate_array(myArray, 10, getNextRandomValue);//get..ä¸èƒ½å¸¦æ‹¬å·,é‚£æ˜¯è°ƒç”¨
         for (int i = 0; i < 10; i++) {
             printf("%d\t", myArray[i]);
         }

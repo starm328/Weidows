@@ -2,41 +2,41 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:18:56
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:18:56
- * @FilePath: \demo\C\2_2020-4\1.¶àÎ¬µÄÖ¸ÕëºÍÊı×é¼°ÆäÓ¦ÓÃ&switchÓï¾ä´óĞÍÊµÀı.c
+ * @LastEditTime: 2020-10-16 09:13:22
+ * @FilePath: \Weidows\C++\Study\2020-4\1.å¤šç»´çš„æŒ‡é’ˆå’Œæ•°ç»„åŠå…¶åº”ç”¨&switchè¯­å¥å¤§å‹å®ä¾‹.c
  */ 
 #include<stdio.h>
-#include<stdlib.h>//°üº¬mallocº¯ÊıµÄ¿â
-#include<string.h>//Ã»ÓÃµ½,ÓÃÓÚ´¦ÀíÊı×é
-int Test_point(int i){//Ö¸Õë,²ÎÊıÃû×Ö¿ÉÒÔºÍÍâ²¿µÄ±äÁ¿ÃûÏàÍ¬
+#include<stdlib.h>//åŒ…å«mallocå‡½æ•°çš„åº“
+#include<string.h>//æ²¡ç”¨åˆ°,ç”¨äºå¤„ç†æ•°ç»„
+int Test_point(int i){//æŒ‡é’ˆ,å‚æ•°åå­—å¯ä»¥å’Œå¤–éƒ¨çš„å˜é‡åç›¸åŒ
     int *p = &i;
-    int **a = &p; //aÊÇÖ¸Õë,Ö¸ÏòÁíÒ»¸öÖ¸Õë
+    int **a = &p; //aæ˜¯æŒ‡é’ˆ,æŒ‡å‘å¦ä¸€ä¸ªæŒ‡é’ˆ
     printf("%p\n", &i);
-    printf("%p\n", p); //Ò»¶şÏàÍ¬
-    printf("%p\n", a); //**aµÄµØÖ·²»Í¬
+    printf("%p\n", p); //ä¸€äºŒç›¸åŒ
+    printf("%p\n", a); //**açš„åœ°å€ä¸åŒ
 
     char b[10][10] = {
-        //¶şÎ¬×Ö·û´®Êı×é
-        "Hello", //Ïàµ±ÓÚ->char [10]
-        "World", //¹²Ê®¸ö,²»´æÔÚ'\0'ÁË
+        //äºŒç»´å­—ç¬¦ä¸²æ•°ç»„
+        "Hello", //ç›¸å½“äº->char [10]
+        "World", //å…±åä¸ª,ä¸å­˜åœ¨'\0'äº†
         "2",
         "3",
-        "4   ", //ÒıºÅÄÚ¿Õ¸ñÒ²Ëã×Ö·û
+        "4   ", //å¼•å·å†…ç©ºæ ¼ä¹Ÿç®—å­—ç¬¦
         "....",
-        "999999999",   //b[9],ÆäÖĞ×î¶àÒ²ÊÇ9¸ö,²»ÒªÇ¿ĞĞÕ¼ÓÃµÚÊ®Î»
-    };                 //ÕâÖÖ¶şÎ¬Êı×éÊú×ÅĞ´ºÃ¿´
-    printf("%s\n", b); //Êä³ö¶şÎ¬µÄb->Êä³öb[0]
+        "999999999",   //b[9],å…¶ä¸­æœ€å¤šä¹Ÿæ˜¯9ä¸ª,ä¸è¦å¼ºè¡Œå ç”¨ç¬¬åä½
+    };                 //è¿™ç§äºŒç»´æ•°ç»„ç«–ç€å†™å¥½çœ‹
+    printf("%s\n", b); //è¾“å‡ºäºŒç»´çš„b->è¾“å‡ºb[0]
 }
-int Month(int month){//Êä³öÓ¢ÎÄÔÂ·İµÄº¯Êı
-    int ret = 0;//¶¨Òåº¯Êı·µ»ØÖµ(ÓÃÓÚÅĞ¶ÏÊÇ·ñÕı³£ÔËĞĞ)
+int Month(int month){//è¾“å‡ºè‹±æ–‡æœˆä»½çš„å‡½æ•°
+    int ret = 0;//å®šä¹‰å‡½æ•°è¿”å›å€¼(ç”¨äºåˆ¤æ–­æ˜¯å¦æ­£å¸¸è¿è¡Œ)
     switch (month){
     case 1:
-        printf("January\n");//¹æÕûĞÎÊ½
+        printf("January\n");//è§„æ•´å½¢å¼
         break;
     case 2:
         printf("February\n");
         break;
-    case 3:printf("March\n");break;//µ¥ĞĞĞÎÊ½,ÕâÖÖÇé¿ö¸üºÃ¿´
+    case 3:printf("March\n");break;//å•è¡Œå½¢å¼,è¿™ç§æƒ…å†µæ›´å¥½çœ‹
     case 4:printf("April\n");break;
     case 5:printf("May\n");break;
     case 6:printf("June\n");break;
@@ -46,25 +46,25 @@ int Month(int month){//Êä³öÓ¢ÎÄÔÂ·İµÄº¯Êı
     case 10:printf("October\n");break;
     case 11:printf("November\n");break;
     case 12:printf("December\n");break;
-    default://Ä¬ÈÏÊä³ö(Ã»ÓĞcaseÆ¥ÅäÊ±)
-        ret = 1;    //ret=1Ê±ËµÃ÷Ã»ÓĞÊäÈëÕıÈ·Êı
+    default://é»˜è®¤è¾“å‡º(æ²¡æœ‰caseåŒ¹é…æ—¶)
+        ret = 1;    //ret=1æ—¶è¯´æ˜æ²¡æœ‰è¾“å…¥æ­£ç¡®æ•°
         printf("???\n");
         break;
     }
-    return ret;//´ø»ØretÖµ¿ÉÒÔÓÃÓÚÌõ¼şÅĞ¶Ï
+    return ret;//å¸¦å›retå€¼å¯ä»¥ç”¨äºæ¡ä»¶åˆ¤æ–­
 }
 int Month2(int argc,char *argv[]){
     int ret = 0;
     while (argc > 12 || argc < 1){
-        printf("ÇëÊäÈëÔÂ·İ\n:");
+        printf("è¯·è¾“å…¥æœˆä»½\n:");
         scanf("%2d", &argc);
-    }/*while±Èdo-whileºÃÓÃĞ©
-    Óë»ò·Çµ¥Ä¿& | ~ Âß¼­&& || !  */
+    }/*whileæ¯”do-whileå¥½ç”¨äº›
+    ä¸æˆ–éå•ç›®& | ~ é€»è¾‘&& || !  */
     printf("%s\n", argv[argc - 1]);
     ret++;
     return ret;
 }
-int main(int argc,char const *argv[]){//mainÊµ¼Ê°üº¬µÄ²ÎÊı
+int main(int argc,char const *argv[]){//mainå®é™…åŒ…å«çš„å‚æ•°
     int i = 0;
     int month = 0;
     Test_point(i);
@@ -81,17 +81,17 @@ int main(int argc,char const *argv[]){//mainÊµ¼Ê°üº¬µÄ²ÎÊı
         "October",
         "November",
         "December",
-    }; /*Ö¸ÕëÊı×é,Ã¿¸öÔªËØÊÇÒ»¸öÖ¸Õëchar *,ÕâÑù
-    Í¬Ê±ÄÜ³õÊ¼»¯(Êµ¼ÊÉÏÖ»ÓĞc[0]=0,ÆäÓàÃ»¸³ÖµµÄÄ¬ÈÏÎª0,Êı×éÍ¨ÓÃ·½·¨)*/
+    }; /*æŒ‡é’ˆæ•°ç»„,æ¯ä¸ªå…ƒç´ æ˜¯ä¸€ä¸ªæŒ‡é’ˆchar *,è¿™æ ·
+    åŒæ—¶èƒ½åˆå§‹åŒ–(å®é™…ä¸Šåªæœ‰c[0]=0,å…¶ä½™æ²¡èµ‹å€¼çš„é»˜è®¤ä¸º0,æ•°ç»„é€šç”¨æ–¹æ³•)*/
 
-    //Ö¸ÕëÊı×éµÄÌØÊâÓ¦ÓÃ,month¿ªÊ¼´¦
-        label_1:{//Ìø×ª±ê¼Ç,Ê¹³ÌĞò¿É¶ÁĞÔ½µµÍ,¾¡Á¿±ÜÃâÊ¹ÓÃ
-            printf("ÇëÊäÈëÔÂ·İ\n");
-            scanf("%2d", &month);//ÓÃ»§ÊäÈëÔÂ·İ
-            if(Month(month)){   //º¯ÊıÍ¬Ê±µ÷ÓÃºÍ×÷ÎªifµÄÅĞ¶ÏÌõ¼ş
+    //æŒ‡é’ˆæ•°ç»„çš„ç‰¹æ®Šåº”ç”¨,monthå¼€å§‹å¤„
+        label_1:{//è·³è½¬æ ‡è®°,ä½¿ç¨‹åºå¯è¯»æ€§é™ä½,å°½é‡é¿å…ä½¿ç”¨
+            printf("è¯·è¾“å…¥æœˆä»½\n");
+            scanf("%2d", &month);//ç”¨æˆ·è¾“å…¥æœˆä»½
+            if(Month(month)){   //å‡½æ•°åŒæ—¶è°ƒç”¨å’Œä½œä¸ºifçš„åˆ¤æ–­æ¡ä»¶
                 goto label_1;
-            }}//Month½áÊø
-    //month2¿ªÊ¼
+            }}//Monthç»“æŸ
+    //month2å¼€å§‹
         if (Month2(month,c)){printf("Function runs successfully\n");}
     return 0;
-}//ÕıÊ½½áÊø!!!
+}//æ­£å¼ç»“æŸ!!!

@@ -2,45 +2,45 @@
  * @Author: Weidows
  * @Date: 2020-06-19 20:52:43
  * @LastEditors: Weidows
- * @LastEditTime: 2020-06-19 20:53:18
- * @FilePath: \demo\C_\Ëã·¨\µİ¹é-ÇóÓêµÎ»ıÀÛÊı\1.c
- * ÇóÓêµÎ´æ»ıÊı
+ * @LastEditTime: 2020-10-16 09:16:31
+ * @FilePath: \Weidows\C++\Arithmetic\é€’å½’-æ±‚é›¨æ»´ç§¯ç´¯æ•°\1.c
+ * æ±‚é›¨æ»´å­˜ç§¯æ•°
  */
-//¿â
+//åº“
 #include <stdio.h>
 #define length 12
-//º¯Êı && struct && typedef
+//å‡½æ•° && struct && typedef
     int deal(const int *s);
 int main()
 {
     int s[length]={0,1,0,2,1,0,1,3,2,1,2,1,};
-    printf("%d", deal(s));  //µ÷ÓÃ²¢Êä³ö
+    printf("%d", deal(s));  //è°ƒç”¨å¹¶è¾“å‡º
     return 0;
 }
 
-int deal(const int *s){     //·µ»ØÓêµÎÊı
+int deal(const int *s){     //è¿”å›é›¨æ»´æ•°
     static int height = 1, meter = 0;
     int log_array[length], log = 0;
     
-    for (int i = 0; i < length;i++){    //¼ÇÂ¼Í¬¸ß¶ÈµÄºÚ¿é
-        if(s[i]>=height){   //°ÑÍ¬¸ß¶ÈÓĞºÚ¿éµÄÄÇ¼¸ÁĞ¼ÇÂ¼µ½Êı×élog_array
+    for (int i = 0; i < length;i++){    //è®°å½•åŒé«˜åº¦çš„é»‘å—
+        if(s[i]>=height){   //æŠŠåŒé«˜åº¦æœ‰é»‘å—çš„é‚£å‡ åˆ—è®°å½•åˆ°æ•°ç»„log_array
             log_array[log] = i;
             log++;
         }
     }
 
-    for(int i = 0; i < log; i++){       //¼ÇÂ¼Á¿ºÚ¿é¼ä¿ÉÈİÄÉÓêµÎÊı
-        // printf("%d\n", log_array[i]);    //²âÊÔ,ÎŞÎó.
-        if((log_array[i+1]-log_array[i])>1){    //ÖÁÉÙ¿Õ³öÒ»¸ö¿Õ
+    for(int i = 0; i < log; i++){       //è®°å½•é‡é»‘å—é—´å¯å®¹çº³é›¨æ»´æ•°
+        // printf("%d\n", log_array[i]);    //æµ‹è¯•,æ— è¯¯.
+        if((log_array[i+1]-log_array[i])>1){    //è‡³å°‘ç©ºå‡ºä¸€ä¸ªç©º
             meter += log_array[i + 1] - log_array[i] - 1;
-            // printf("%d\n", meter);   //²âÊÔ
+            // printf("%d\n", meter);   //æµ‹è¯•
         }
     }
 
-    if (log == 0) //Èç¹ûÕâ²ã¸ß¶ÈÎŞºÚ¿é(µ½Í·ÁË)
+    if (log == 0) //å¦‚æœè¿™å±‚é«˜åº¦æ— é»‘å—(åˆ°å¤´äº†)
         return meter;
     else{
         height++;
-        meter = deal(s); //µİ¹é
+        meter = deal(s); //é€’å½’
     }
 }

@@ -2,26 +2,26 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:38:50
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:39:15
- * @FilePath: \demo\C\3.log && pow && sqrt && abs(¾ø¶ÔÖµ,Ã»¿ÉËµµÄ) ÔËËã.c
+ * @LastEditTime: 2020-10-16 09:14:50
+ * @FilePath: \Weidows\C++\Study\2020-5\3.log && pow && sqrt && abs(ç»å¯¹å€¼,æ²¡å¯è¯´çš„) è¿ç®—.c
  */
-// log && pow && sqrt && abs(¾ø¶ÔÖµ,Ã»¿ÉËµµÄ) ÔËËã
-//¿â
+// log && pow && sqrt && abs(ç»å¯¹å€¼,æ²¡å¯è¯´çš„) è¿ç®—
+//åº“
 #include <math.h>
 #include <stdio.h>
 //main
 int main()
 {
-    //»»µ×¹«Ê½ log a B = log c B / log c A
-    printf("Ò»%f\n", log10(8) / log10(2)); //Ïàµ±ÓÚlog2 (8)
-    printf("%f\n", log(8) / log(2));       //²»Ğ´µ×ÊıÄ¬ÈÏÒÔeÎªµ×
+    //æ¢åº•å…¬å¼ log a B = log c B / log c A
+    printf("ä¸€%f\n", log10(8) / log10(2)); //ç›¸å½“äºlog2 (8)
+    printf("%f\n", log(8) / log(2));       //ä¸å†™åº•æ•°é»˜è®¤ä»¥eä¸ºåº•
 
-    //¿ª·½ºÍ³Ë·½
-    printf("¶ş%f\n", pow(10, 8));
-    printf("%d\n", pow(10, 8)); //pow()·µ»ØÖµÊÇ¸¡µãÊı,Èç¹ûÓÃ%dÊä³ö,½á¹û²»¶Ô
+    //å¼€æ–¹å’Œä¹˜æ–¹
+    printf("äºŒ%f\n", pow(10, 8));
+    printf("%d\n", pow(10, 8)); //pow()è¿”å›å€¼æ˜¯æµ®ç‚¹æ•°,å¦‚æœç”¨%dè¾“å‡º,ç»“æœä¸å¯¹
     printf("%d\n", (int)pow(10, 8));
-    //ÌØÊâ:³Ë·½0.5Ê±¾ÍÊÇ¿ª·½sqrt
-    printf("Èı%f\n", pow(100, 0.5));
+    //ç‰¹æ®Š:ä¹˜æ–¹0.5æ—¶å°±æ˜¯å¼€æ–¹sqrt
+    printf("ä¸‰%f\n", pow(100, 0.5));
     printf("%f\n", sqrt(100));
     return 0;
 }

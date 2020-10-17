@@ -3,15 +3,15 @@
  * @Date: 2020-05-29 00:38:16
  * @LastEditors: Weidows
  * @LastEditTime: 2020-05-29 00:38:30
- * @FilePath: \demo\C\2.Î»¶Î.c
+ * @FilePath: \demo\C\2.ä½æ®µ.c
  */ 
-//Î»¶Î
-//¿â
+//ä½æ®µ
+//åº“
     #include<stdio.h>
-//º¯Êı
+//å‡½æ•°
     void Bin(unsigned int Num);
-    typedef struct {    //3+1+1+27=32,Õâ¸öÎ»¶Î½á¹¹Õ¼ÓÃÒ»¸öint´óĞ¡(Êı¾İÏÈºó²»¶¨µ«Á¬Ğø)
-        unsigned int leading : 3;   //ÕâÖÖĞÎÊ½ÊÇleadingÕ¼ÓÃ¶àÉÙÎ»
+    typedef struct {    //3+1+1+27=32,è¿™ä¸ªä½æ®µç»“æ„å ç”¨ä¸€ä¸ªintå¤§å°(æ•°æ®å…ˆåä¸å®šä½†è¿ç»­)
+        unsigned int leading : 3;   //è¿™ç§å½¢å¼æ˜¯leadingå ç”¨å¤šå°‘ä½
         unsigned int Flag1 : 1;
         unsigned int Flag2 : 1;
         int trailing : 27;
@@ -19,16 +19,16 @@
 //main
 int main()
 {
-    U0 uu = {2, 0, 1, 0};   //typedefÓĞ¼¯ºÏ¸³ÖµµÄÓÅÊÆ
+    U0 uu = {2, 0, 1, 0};   //typedefæœ‰é›†åˆèµ‹å€¼çš„ä¼˜åŠ¿
     printf("sizeof(uu)=%lu\n", sizeof(uu));
-    Bin(*(int *)&uu);   //È¡uu½á¹¹µØÖ·Ç¿×ª³Éint*,ÔÙ½øĞĞ·ÃÎÊ
+    Bin(*(int *)&uu);   //å–uuç»“æ„åœ°å€å¼ºè½¬æˆint*,å†è¿›è¡Œè®¿é—®
 
     return 0;
 }
 
 void Bin(unsigned int Num){
-    unsigned int mask = 1u << 31;   //ÎŞ·ûºÅintĞÍÖµ1,×óÒÆ31Î»,Ò²¾ÍÊÇ×î¸ßÎ»Îª1,ÆäÓàÎª0
-    for (; mask ; mask >>=1){   //²»ĞèÒª³õÊ¼»¯¼ÆÊıÆ÷¿É¿Õ×Å,mask!=0ÎªÌõ¼ş
+    unsigned int mask = 1u << 31;   //æ— ç¬¦å·intå‹å€¼1,å·¦ç§»31ä½,ä¹Ÿå°±æ˜¯æœ€é«˜ä½ä¸º1,å…¶ä½™ä¸º0
+    for (; mask ; mask >>=1){   //ä¸éœ€è¦åˆå§‹åŒ–è®¡æ•°å™¨å¯ç©ºç€,mask!=0ä¸ºæ¡ä»¶
         printf("%d", Num & mask ? 1 : 0);
     }
 }

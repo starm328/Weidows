@@ -3,30 +3,30 @@
  * @Date: 2020-05-29 00:12:57
  * @LastEditors: Weidows
  * @LastEditTime: 2020-09-26 23:27:14
- * @FilePath: \Weidows\C++\Study\2020-3\5.Ö¸ÕëÓëÊý×éµÄÍ¨ÓÃÐÔ¾ÉÀý(¶¯Ì¬ÄÚ´æ·ÖÅäÀ´¶¨Òå·ÇÈ·¶¨Êý×é).c
+ * @FilePath: \Weidows\C++\Study\2020-3\5.æŒ‡é’ˆä¸Žæ•°ç»„çš„é€šç”¨æ€§æ—§ä¾‹(åŠ¨æ€å†…å­˜åˆ†é…æ¥å®šä¹‰éžç¡®å®šæ•°ç»„).c
  */
 #include <stdio.h>
 #include <stdlib.h>
 int main()
 {
   int num, i;
-  printf("ÊäÈëÊýÁ¿:");
+  printf("è¾“å…¥æ•°é‡:");
   scanf("%d", &num);
 
-  int *a; //Ö¸ÕëºÍÊý×éÍ¬Àà¿ÉÒÔ°Ñ*aÓÃ×÷ÎªÊý×é
+  int *a; //æŒ‡é’ˆå’Œæ•°ç»„åŒç±»å¯ä»¥æŠŠ*aç”¨ä½œä¸ºæ•°ç»„
   a = (int *)malloc(num * sizeof(int));
   /**
-   * ¶¨ÒåÖ¸ÕëÄÚ´æÕ¼ÓÃ´óÐ¡,malloc·µ»ØµÄ½á¹ûÊÇvoid*,ÐèÒª×ª»»³ÉÐèÒªµÄÀàÐÍ
+   * å®šä¹‰æŒ‡é’ˆå†…å­˜å ç”¨å¤§å°,mallocè¿”å›žçš„ç»“æžœæ˜¯void*,éœ€è¦è½¬æ¢æˆéœ€è¦çš„ç±»åž‹
    */
 
   for (i = 0; i < num; i++)
   {
     scanf("%d", &a[i]);
-  } //ÒÔÊý×é¿´´ýÖ¸Õë²¢ÕýÐòÊäÈëÔªËØ
+  } //ä»¥æ•°ç»„çœ‹å¾…æŒ‡é’ˆå¹¶æ­£åºè¾“å…¥å…ƒç´ 
   for (i = num - 1; i >= 0; i--)
-  {                                //ÕýÐòÊ±i<num,µ¹ÐòÊ±i>= 0
-    printf("a[%d]=%d\n", i, a[i]); //½âÊÍÐÔÊý×éÔªËØÊä³ö
+  {                                //æ­£åºæ—¶i<num,å€’åºæ—¶i>= 0
+    printf("a[%d]=%d\n", i, a[i]); //è§£é‡Šæ€§æ•°ç»„å…ƒç´ è¾“å‡º
   }
-  free(a); //ÊÍ·ÅaÕ¼ÓÃµÄÄÚ´æ
+  free(a); //é‡Šæ”¾aå ç”¨çš„å†…å­˜
   return 0;
 }

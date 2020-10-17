@@ -2,15 +2,15 @@
  * @Author: Weidows
  * @Date: 2020-09-16 16:34:46
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-13 20:42:29
- * @FilePath: \Github\Weidows\C++\Test\Test.c
+ * @LastEditTime: 2020-10-16 09:09:37
+ * @FilePath: \Weidows\C++\Test\Test.c
  */
-//!¿â
+//!åº“
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h> //*system,malloc...
 
-//!º¯Êý && struct && typedef
+//!å‡½æ•° && struct && typedef
 
 int main()
 {

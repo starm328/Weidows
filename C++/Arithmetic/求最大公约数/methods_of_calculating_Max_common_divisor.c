@@ -2,11 +2,11 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:39:32
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:39:52
- * @FilePath: \demo\C\4.ËÄÖÖ·½·¨Çó×î´ó¹«Ô¼Êımethods of calculating Max common divisor.c
+ * @LastEditTime: 2020-10-16 09:16:39
+ * @FilePath: \Weidows\C++\Arithmetic\æ±‚æœ€å¤§å…¬çº¦æ•°\methods_of_calculating_Max_common_divisor.c
  */ 
-//24. ËÄÖÖ·½·¨Çó×î´ó¹«Ô¼Êımethods of calculating Max common divisor
-//¿â
+//24. å››ç§æ–¹æ³•æ±‚æœ€å¤§å…¬çº¦æ•°methods of calculating Max common divisor
+//åº“
     #include <stdio.h>
 
     #include <stdlib.h>
@@ -15,40 +15,40 @@
 
     #include <math.h>
 
-//Õ·×ªÏà³ı·¨ (Ğ´·¨ÉñÁË)
+//è¾—è½¬ç›¸é™¤æ³• (å†™æ³•ç¥äº†)
     int gcd(int a, int b){
         if (a % b == 0)
             return b;
         else
             return gcd(b, a % b);
-    } //·Çµ¥³ö¿Ú,²»½¨ÒéĞĞÎª
+    } //éå•å‡ºå£,ä¸å»ºè®®è¡Œä¸º
 
-//Çî¾Ù·¨
+//ç©·ä¸¾æ³•
     int divisor(int a, int b)
     {
-        int temp;               //¶¨ÒåÕûĞÍ±äÁ¿
-        temp = (a > b) ? b : a; //²ÉÖÖÌõ¼şÔËËã±í´ïÊ½Çó³öÁ½¸öÊıÖĞµÄ×îĞ¡Öµ
+        int temp;               //å®šä¹‰æ•´å‹å˜é‡
+        temp = (a > b) ? b : a; //é‡‡ç§æ¡ä»¶è¿ç®—è¡¨è¾¾å¼æ±‚å‡ºä¸¤ä¸ªæ•°ä¸­çš„æœ€å°å€¼
         while (temp > 0)
 
         {
-            if (a % temp == 0 && b % temp == 0) //Ö»ÒªÕÒµ½Ò»¸öÊıÄÜÍ¬Ê±±»a,bËùÕû³ı£¬ÔòÖĞÖ¹Ñ­»·
+            if (a % temp == 0 && b % temp == 0) //åªè¦æ‰¾åˆ°ä¸€ä¸ªæ•°èƒ½åŒæ—¶è¢«a,bæ‰€æ•´é™¤ï¼Œåˆ™ä¸­æ­¢å¾ªç¯
                 break;
-            temp--; //Èç²»Âú×ãifÌõ¼şÔò±äÁ¿×Ô¼õ£¬Ö±µ½ÄÜ±»a,bËùÕû³ı
+            temp--; //å¦‚ä¸æ»¡è¶³ifæ¡ä»¶åˆ™å˜é‡è‡ªå‡ï¼Œç›´åˆ°èƒ½è¢«a,bæ‰€æ•´é™¤
         }
-        return (temp); //·µ»ØÂú×ãÌõ¼şµÄÊıµ½Ö÷µ÷º¯Êı´¦
+        return (temp); //è¿”å›æ»¡è¶³æ¡ä»¶çš„æ•°åˆ°ä¸»è°ƒå‡½æ•°å¤„
     }
 
-//¸üÏà¼õËğ·¨
+//æ›´ç›¸å‡æŸæ³•
 int gcd2(int m, int n)
 {
     int i = 0, temp, x;
-    while (m % 2 == 0 && n % 2 == 0) //ÅĞ¶ÏmºÍnÄÜ±»¶àÉÙ¸ö2Õû³ı
+    while (m % 2 == 0 && n % 2 == 0) //åˆ¤æ–­må’Œnèƒ½è¢«å¤šå°‘ä¸ª2æ•´é™¤
     {
         m /= 2;
         n /= 2;
         i += 1;
     }
-    if (m < n) //m±£´æ´óµÄÖµ
+    if (m < n) //mä¿å­˜å¤§çš„å€¼
     {
         temp = m;
         m = n;
@@ -68,7 +68,7 @@ int gcd2(int m, int n)
         return (int)pow(2, i) * n;
 }
 
-//SteinËã·¨
+//Steinç®—æ³•
 int Stein(unsigned int x, unsigned int y)
 /* return the greatest common divisor of x and y */
 {
@@ -121,7 +121,7 @@ int Stein(unsigned int x, unsigned int y)
     return (x << factor);
 }
 
-//mainº¯Êı
+//mainå‡½æ•°
 int main()
 {
     int i;
@@ -144,13 +144,13 @@ int main()
     start = clock();
     for (i = 0; i < 30; i++)
     {
-        printf("Õ·×ªÏà³ı·¨ËùµÃ×î´ó¹«Ô¼ÊıÎª£º%d\n", gcd(a[i], b[i]));
-        printf("Çî¾Ù·¨ËùµÃ×î´ó¹«Ô¼ÊıÎª£º%d\n", divisor(a[i], b[i]));
-        printf("¸üÏà¼õËğ·¨ËùµÃ×î´ó¹«Ô¼ÊıÎª£º%d\n", gcd2(a[i], b[i]));
-        printf("SteinËã·¨ËùµÃ×î´ó¹«Ô¼ÊıÎª£º%d\n", Stein(a[i], b[i]));
+        printf("è¾—è½¬ç›¸é™¤æ³•æ‰€å¾—æœ€å¤§å…¬çº¦æ•°ä¸ºï¼š%d\n", gcd(a[i], b[i]));
+        printf("ç©·ä¸¾æ³•æ‰€å¾—æœ€å¤§å…¬çº¦æ•°ä¸ºï¼š%d\n", divisor(a[i], b[i]));
+        printf("æ›´ç›¸å‡æŸæ³•æ‰€å¾—æœ€å¤§å…¬çº¦æ•°ä¸ºï¼š%d\n", gcd2(a[i], b[i]));
+        printf("Steinç®—æ³•æ‰€å¾—æœ€å¤§å…¬çº¦æ•°ä¸ºï¼š%d\n", Stein(a[i], b[i]));
     }
     finish = clock();
     dur = (double)(finish - start) / CLOCKS_PER_SEC;
-    printf("ÔËĞĞËùÓÃµÄÊ±¼äÎª£º%lf s\n", dur);
+    printf("è¿è¡Œæ‰€ç”¨çš„æ—¶é—´ä¸ºï¼š%lf s\n", dur);
     return 0;
 }

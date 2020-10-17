@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-07-20 18:40:10
  * @LastEditors: Weidows
- * @LastEditTime: 2020-08-02 11:58:51
+ * @LastEditTime: 2020-10-16 08:58:13
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\control_inversion\fox_and_rabbit\FoxAndRabbit.java
  */
 package twenty.july.control_inversion.fox_and_rabbit;
@@ -15,9 +15,13 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import twenty.july.control_inversion.animal.*;
+import twenty.july.control_inversion.animal.Animal;
+import twenty.july.control_inversion.animal.Fox;
+import twenty.july.control_inversion.animal.Rabbit;
 import twenty.july.control_inversion.cell.Cell;
-import twenty.july.control_inversion.field.*;
+import twenty.july.control_inversion.field.Field;
+import twenty.july.control_inversion.field.Location;
+import twenty.july.control_inversion.field.View;
 
 public class FoxAndRabbit {
   private Field theField;

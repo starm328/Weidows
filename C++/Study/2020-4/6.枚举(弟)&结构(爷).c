@@ -2,23 +2,23 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:30:54
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:31:17
- * @FilePath: \demo\C\2_2020-4\6.Ã¶¾Ù(µÜ)&½á¹¹(Ò¯).c
+ * @LastEditTime: 2020-10-16 09:14:08
+ * @FilePath: \Weidows\C++\Study\2020-4\6.æšä¸¾(å¼Ÿ)&ç»“æ„(çˆ·).c
  */ 
-//Ã¶¾Ù(µÜ)&½á¹¹(Ò¯)  ¤Î  <<Ã¶¶Ì½á³¤>>
-//¿â
+//æšä¸¾(å¼Ÿ)&ç»“æ„(çˆ·)  ã®  <<æšçŸ­ç»“é•¿>>
+//åº“
     #include<stdio.h>
     #include<stdbool.h>
-//Ã¶¾ÙºÍ½á¹¹
+//æšä¸¾å’Œç»“æ„
     enum color{RED,YELLOW,GREEN,NumColors};
-    //´Ó0->nµÄintĞÍ,Ã¶¾ÙÁ¿µ±intÓÃ,·´Ö®²»ĞĞ(ĞèÒªÓÃÊı×é),Ã¶¾ÙÏàµ±ÓÚ×éºÏ¶¨Òåint
+    //ä»0->nçš„intå‹,æšä¸¾é‡å½“intç”¨,åä¹‹ä¸è¡Œ(éœ€è¦ç”¨æ•°ç»„),æšä¸¾ç›¸å½“äºç»„åˆå®šä¹‰int
 
     struct point{
-        /*¶¨ÒåÁË½á¹¹ÌåÍ¬Ê±¶¨Òåp1,p2Á½¸öpointÀàĞÍµÄ½á¹¹Ìå
-        p1,p2ÀïÃæÓĞxºÍyµÄÖµ*/
+        /*å®šä¹‰äº†ç»“æ„ä½“åŒæ—¶å®šä¹‰p1,p2ä¸¤ä¸ªpointç±»å‹çš„ç»“æ„ä½“
+        p1,p2é‡Œé¢æœ‰xå’Œyçš„å€¼*/
         int x;
         char y;
-    } p1, p2; //ÁíÍâ¶¨Òå¸ñÊ½struct point p3;ÈçÎŞĞè¶îÍâ¶¨Òå¿ÉÒÔÈ¥µô½á¹¹Ãû
+    } p1, p2; //å¦å¤–å®šä¹‰æ ¼å¼struct point p3;å¦‚æ— éœ€é¢å¤–å®šä¹‰å¯ä»¥å»æ‰ç»“æ„å
 
     struct date{
         int month;
@@ -26,38 +26,38 @@
         int year;
     };
 
-    bool isLeap(struct date d);//boolÀàĞÍÅĞ¶ÏÊÇ·ñÊÇÈòÄêµÄº¯Êı
+    bool isLeap(struct date d);//boolç±»å‹åˆ¤æ–­æ˜¯å¦æ˜¯é—°å¹´çš„å‡½æ•°
     int NumberOfDays(struct date d);
 
 int main(int argc,const char *argv[]){
-    //Á½ÖÖ½á¹¹µÄ¶¨ÒåºÍ³õÊ¼»¯·½·¨
+    //ä¸¤ç§ç»“æ„çš„å®šä¹‰å’Œåˆå§‹åŒ–æ–¹æ³•
         struct date today1={07,31,2014};
         struct date thismonth={.month=7,.year=2014,};
         printf("today %d-%d-%d    ", today1.year, today1.month, today1.day);
-        printf("thismonth %d-%d-%d    ", thismonth.year, thismonth.month, thismonth.day); //Îª¶¨ÒåµÄÎª0
+        printf("thismonth %d-%d-%d    ", thismonth.year, thismonth.month, thismonth.day); //ä¸ºå®šä¹‰çš„ä¸º0
         
-        today1 = thismonth;//Í¬ÊÇdateÀàĞÍ½á¹¹Ìå¿ÉÒÔºáÏò¸³Öµ
+        today1 = thismonth;//åŒæ˜¯dateç±»å‹ç»“æ„ä½“å¯ä»¥æ¨ªå‘èµ‹å€¼
         printf("today %d-%d-%d\n", today1.year, today1.month, today1.day);
 
-        struct point p3;//¶¨ÒåpointÀàĞÍµÄ½á¹¹
-        p3 = (struct point){1, 'y'};//Çø±ğÓÚÊı×é,½á¹¹Ìå¿ÉÒÔÁíĞĞ{}³õÊ¼»¯
+        struct point p3;//å®šä¹‰pointç±»å‹çš„ç»“æ„
+        p3 = (struct point){1, 'y'};//åŒºåˆ«äºæ•°ç»„,ç»“æ„ä½“å¯ä»¥å¦è¡Œ{}åˆå§‹åŒ–
         printf("%d-%c\n", p3.x, p3.y);
-        struct date *p = &today1;//½á¹¹ÌåpÄÚÔªËØÊÇÖ¸Ïòtoday¶ÔÓ¦ÔªËØµÄÖ¸Õë
-    //º¯ÊıÓëÊı¾İ½á¹¹½áºÏÊµÀı
+        struct date *p = &today1;//ç»“æ„ä½“på†…å…ƒç´ æ˜¯æŒ‡å‘todayå¯¹åº”å…ƒç´ çš„æŒ‡é’ˆ
+    //å‡½æ•°ä¸æ•°æ®ç»“æ„ç»“åˆå®ä¾‹
         struct date today, tomorrow;
 
         printf("Enter today's date(yyyy mm dd:");
         scanf("%d %d %d", &today.year, &today.month, &today.day);
 
-        if(today.day!=NumberOfDays(today)){//today·ÇÔÂÄ©
+        if(today.day!=NumberOfDays(today)){//todayéæœˆæœ«
             tomorrow.day = today.day + 1;
             tomorrow.month = today.month;
             tomorrow.year = today.year;
-        }else if(today.month==12){//todayÊÇÔÂÄ©ÇÒÊÇ12ÔÂ
+        }else if(today.month==12){//todayæ˜¯æœˆæœ«ä¸”æ˜¯12æœˆ
             tomorrow.day = 1;
             tomorrow.month = 1;
             tomorrow.year = today.year + 1;
-        }else{//todayÊÇÔÂÄ©
+        }else{//todayæ˜¯æœˆæœ«
             tomorrow.day = 1;
             tomorrow.month = today.month + 1;
             tomorrow.year = today.year;
@@ -74,18 +74,18 @@ int NumberOfDays(struct date d){
     const int daysPerMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if(d.month==2 && isLeap(d))
-        days = 29; //×¢ÒâifµÄ¼òÂÔĞ´·¨,Ö»ÄÜĞ´Ò»ÌõÓï¾ä,²»´ø{}
+        days = 29; //æ³¨æ„ifçš„ç®€ç•¥å†™æ³•,åªèƒ½å†™ä¸€æ¡è¯­å¥,ä¸å¸¦{}
     else
         days = daysPerMonth[d.month-1];
 
     return days;
-}//ÅĞ¶ÏÃ¿¸öÔÂµÄÔÂÄ©ÊÇÄÄÌì
+}//åˆ¤æ–­æ¯ä¸ªæœˆçš„æœˆæœ«æ˜¯å“ªå¤©
 
 bool isLeap(struct date d){
-    bool leap = false;//×¢Òâbool¸³Öµ¸ñÊ½,ÇÒĞèÒªÓĞ<stdbool.h>µÄÍ·ÎÄ¼ş
+    bool leap = false;//æ³¨æ„boolèµ‹å€¼æ ¼å¼,ä¸”éœ€è¦æœ‰<stdbool.h>çš„å¤´æ–‡ä»¶
 
     if((d.year %4 ==0  &&  d.year %100 !=0)||(d.year %400 == 0))
         leap = true;
 
     return leap;
-}//boolÀàĞÍº¯Êı,ÅĞ¶ÏÊÇ·ñÎªÈòÄê
+}//boolç±»å‹å‡½æ•°,åˆ¤æ–­æ˜¯å¦ä¸ºé—°å¹´

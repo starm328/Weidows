@@ -2,10 +2,10 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:33:41
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:33:54
- * @FilePath: \demo\C\8.typedefËõĞ´ && ÁªºÏunion(Ğ´ÎÄ¼şÊ±ÓĞÓÃ).c
+ * @LastEditTime: 2020-10-16 09:14:19
+ * @FilePath: \Weidows\C++\Study\2020-4\8.typedefç¼©å†™ && è”åˆunion(å†™æ–‡ä»¶æ—¶æœ‰ç”¨).c
  */ 
-//typedefËõĞ´ && ÁªºÏunion(Ğ´ÎÄ¼şÊ±ÓĞÓÃ)
+//typedefç¼©å†™ && è”åˆunion(å†™æ–‡ä»¶æ—¶æœ‰ç”¨)
 #include <stdio.h>
 
 typedef long int64_t;
@@ -13,24 +13,24 @@ typedef struct ADate{
     int year;
     int month;
     int day;
-} Date;//DateÀàĞÍ¾ÍÊÇAdateÀàĞÍ½á¹¹µÄËõĞ´
+} Date;//Dateç±»å‹å°±æ˜¯Adateç±»å‹ç»“æ„çš„ç¼©å†™
 
 typedef union {
     int i;
     char ch[sizeof(int)];
-} CHI;//½«Ò»¸öÁªºÏÀàĞÍÃüÃûÎªCHI
+} CHI;//å°†ä¸€ä¸ªè”åˆç±»å‹å‘½åä¸ºCHI
 
 
 int main(){
     int64_t i1 = 1000000000;
     Date d = {2020, 4, 5};
 
-    CHI chi;//¶¨ÒåÁªºÏchi
+    CHI chi;//å®šä¹‰è”åˆchi
     chi.i = 1234;
     int i;
     for (i = 0; i < sizeof(int);i++){
         printf("%02hhX", chi.ch[i]);
-    }//ÁªºÏÔªËØ¹²ÓÃÄÚ´æ,ÕâÀï¾ÍÊÇÒÔchµÄ·½Ê½¶ÁÈ¡iÔÚÄÚ´æÖĞµÄ´æ´¢¸ñÊ½
+    }//è”åˆå…ƒç´ å…±ç”¨å†…å­˜,è¿™é‡Œå°±æ˜¯ä»¥chçš„æ–¹å¼è¯»å–iåœ¨å†…å­˜ä¸­çš„å­˜å‚¨æ ¼å¼
 
     return 0;
 }

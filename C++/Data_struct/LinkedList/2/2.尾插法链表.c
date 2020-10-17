@@ -2,18 +2,18 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:43:53
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:44:12
- * @FilePath: \demo\C\Êı¾İ½á¹¹\2.Î²²å·¨Á´±í.c
+ * @LastEditTime: 2020-10-16 09:16:15
+ * @FilePath: \Weidows\C++\Data_struct\LinkedList\2\2.å°¾æ’æ³•é“¾è¡¨.c
  */ 
-//2.Î²²å·¨Á´±í
-//¿â
+//2.å°¾æ’æ³•é“¾è¡¨
+//åº“
     #include <stdio.h>
     #include <stdlib.h>
     #include <time.h>
-//¶¨ÒåÈ«¾Ö±äÁ¿MAXÎª14 
+//å®šä¹‰å…¨å±€å˜é‡MAXä¸º14 
 #define MAX 14
 
-struct list    //ÃèÊö½Úµã 
+struct list    //æè¿°èŠ‚ç‚¹ 
 { 
 	char string;
 	struct list *next;
@@ -21,16 +21,16 @@ struct list    //ÃèÊö½Úµã
 typedef struct list node;
 typedef node* link;
 
-char string[MAX]={'I',' ','l','o','v','e',' ','p','r','o','g','r','a','m'};//Êı¾İ¿â 
+char string[MAX]={'I',' ','l','o','v','e',' ','p','r','o','g','r','a','m'};//æ•°æ®åº“ 
 
-link create_list(link head)   //Î²²å·¨½¨±í
+link create_list(link head)   //å°¾æ’æ³•å»ºè¡¨
 {
 	link pointer,newpointer;
 	int i;
 	
-	head=(link)malloc(sizeof(node));//¶¯Ì¬·ÖÅäÄÚ´æ 
+	head=(link)malloc(sizeof(node));//åŠ¨æ€åˆ†é…å†…å­˜ 
 	
-	if(head==NULL)//ÅĞ¶ÏÊÇ·ñ·ÖÅä³É¹¦ (·ÀÖ¹ÄÚ´æĞ¹Â¶)
+	if(head==NULL)//åˆ¤æ–­æ˜¯å¦åˆ†é…æˆåŠŸ (é˜²æ­¢å†…å­˜æ³„éœ²)
 		printf("exit\n");
 	
 	else
@@ -47,18 +47,18 @@ link create_list(link head)   //Î²²å·¨½¨±í
    				printf("exit\n");
 	        else
 			{
-				newpointer->string=string[i];//Î²²å·¨µÄ¾«Ëè 
+				newpointer->string=string[i];//å°¾æ’æ³•çš„ç²¾é«“ 
 				newpointer->next=NULL;
 				
-				pointer->next=newpointer;   //½«µ¹ÊıµÚ¶ş¸ö½ÚµãµÄnextÖ¸ÏòĞÂ½Úµã
-				pointer=newpointer;     //È»ºóÔÙ°ÑpointerÖ¸ÏòĞÂ½Úµã
+				pointer->next=newpointer;   //å°†å€’æ•°ç¬¬äºŒä¸ªèŠ‚ç‚¹çš„nextæŒ‡å‘æ–°èŠ‚ç‚¹
+				pointer=newpointer;     //ç„¶åå†æŠŠpointeræŒ‡å‘æ–°èŠ‚ç‚¹
 			}      
 		}
 	}  
 	return head;
 }
 
-void printf_list(link head)  //¶¨Òå´òÓ¡ÁĞ±íº¯Êı 
+void printf_list(link head)  //å®šä¹‰æ‰“å°åˆ—è¡¨å‡½æ•° 
 { 
     link temp;
     temp=head;
@@ -71,7 +71,7 @@ void printf_list(link head)  //¶¨Òå´òÓ¡ÁĞ±íº¯Êı
 } 
 
 
-void free_list(link head)  //¶¨ÒåÒ»¸öÊÍ·ÅÁ´±íº¯Êı 
+void free_list(link head)  //å®šä¹‰ä¸€ä¸ªé‡Šæ”¾é“¾è¡¨å‡½æ•° 
 {
 	link temp;
 

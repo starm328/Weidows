@@ -2,27 +2,27 @@
  * @Author: Weidows
  * @Date: 2020-05-29 00:26:45
  * @LastEditors: Weidows
- * @LastEditTime: 2020-05-29 00:28:31
- * @FilePath: \demo\C\2_2020-4\4.ÊµÏÖÔÚtestº¯ÊıÖĞ¸Ä±ästrµÄÖ¸ÕëÖ¸ÏòµØÖ·.c
+ * @LastEditTime: 2020-10-16 09:13:48
+ * @FilePath: \Weidows\C++\Study\2020-4\4.å®ç°åœ¨testå‡½æ•°ä¸­æ”¹å˜strçš„æŒ‡é’ˆæŒ‡å‘åœ°å€.c
  */
 #include <stdio.h>
 char *test(char *string)
-{ //·½·¨1.·µ»ØÖµ´ø»Ø
+{ //æ–¹æ³•1.è¿”å›å€¼å¸¦å›
     string = "hello world";
-    /*Ò×´í,½á¹ûstr²»ÊÇhello world,ÈÔÊÇnull,Ô­Òò:test²»ÊÇ¸Ä±äÖ¸Õë
-µÄÄ¿±ênull,¶øÊÇÈÃÖ¸ÕëÖ¸ÏòÁíÒ»¸öÄ¿±êhello world,ËùÖ¸µØÖ·¸Ä±ä
-µ«testÃ»ÓĞ·µ»Ø½á¹û,¼ÓÉÏreturn string;¾ÍokÁË*/
+    /*æ˜“é”™,ç»“æœsträ¸æ˜¯hello world,ä»æ˜¯null,åŸå› :testä¸æ˜¯æ”¹å˜æŒ‡é’ˆ
+çš„ç›®æ ‡null,è€Œæ˜¯è®©æŒ‡é’ˆæŒ‡å‘å¦ä¸€ä¸ªç›®æ ‡hello world,æ‰€æŒ‡åœ°å€æ”¹å˜
+ä½†testæ²¡æœ‰è¿”å›ç»“æœ,åŠ ä¸Šreturn string;å°±okäº†*/
     return string;
 }
 void test2(char **string)
-{ //·½·¨2.ÓÃ¶şÎ¬Ö¸Õë,µ«´Ë·½·¨²»ÊÊÓÃÓÚº¯ÊıÖĞ¶şÎ¬Ö¸ÕëÊı×éĞŞ¸Ä
-// ĞŞ¸ÄÒ»Î¬Ö¸ÕëÊı×é, Ö»ÄÜÓÃforµ¥¸ö±éÀú*string = "hello world"
+{ //æ–¹æ³•2.ç”¨äºŒç»´æŒ‡é’ˆ,ä½†æ­¤æ–¹æ³•ä¸é€‚ç”¨äºå‡½æ•°ä¸­äºŒç»´æŒ‡é’ˆæ•°ç»„ä¿®æ”¹
+// ä¿®æ”¹ä¸€ç»´æŒ‡é’ˆæ•°ç»„, åªèƒ½ç”¨forå•ä¸ªéå†*string = "hello world"
 }
 int main()
 {
     char *str = NULL;
     char *str2 = NULL;
-    str = test(str); //·µ»ØÖµÊÇÈÃº¯ÊıÕûÌå´øÓĞÄ³¸ö²ÎÊıµÄÖµ,Ğè¸³Öµ
+    str = test(str); //è¿”å›å€¼æ˜¯è®©å‡½æ•°æ•´ä½“å¸¦æœ‰æŸä¸ªå‚æ•°çš„å€¼,éœ€èµ‹å€¼
     test2(&str2);
     printf("str=%s\n", str);
     printf("str=%s\n", str2);
