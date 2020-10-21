@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-07-25 22:03:37
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-20 23:21:09
+ * @LastEditTime: 2020-10-21 18:18:30
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\exception\ArrayIndex.java
  */
 package twenty.july.exception;
