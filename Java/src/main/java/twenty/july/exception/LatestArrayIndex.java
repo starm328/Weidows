@@ -2,53 +2,52 @@
  * @Author: Weidows
  * @Date: 2020-07-29 23:06:22
  * @LastEditors: Weidows
- * @LastEditTime: 2020-08-06 11:39:56
+ * @LastEditTime: 2020-10-20 22:13:16
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\exception\LatestArrayIndex.java
  */
 package twenty.july.exception;
 
+//! 父类(throw SmallException)
 public class LatestArrayIndex {
-  public LatestArrayIndex() throws OpenException { // !构造函数
-
+  public LatestArrayIndex() throws BigException {
   }
 
-  public void f() throws OpenException {
+  public void f() throws BigException, SmallException {
   }
 }
 
-class NewCloseException extends OpenException {
-
-  /**
-   *
-   */
+/// 异常类(小的)
+class SmallException extends OpenException {
   private static final long serialVersionUID = 1L;
 }
 
-class NewException extends Exception {
-
-  /**
-   *
-   */
+/// 异常类(大的)
+class BigException extends Exception {
   private static final long serialVersionUID = 1L;
 }
 
+//! 子类(Override, throw BigException)
 class NewClass extends LatestArrayIndex {
   /**
-   * *子类重写函数,throws不能超过父类中对应函数throws的范围
+   * *子类重写函数,throws不能超过父类中对应函数throws的范围(编写时会报错提示)
    * *构造函数相反,子类构造函数必须throws父类构造函数的所有Exception
    */
-  public NewClass() throws OpenException {//!子类构造函数throws范围大
+  //! @Override 子类不能继承构造方法,不能Override
+  public NewClass() throws BigException {
   }
 
-  public void f() throws NewCloseException {//*比父类throws范围小
+  @Override
+  public void f() throws SmallException {
   }
+}
 
+class Test {
   public static void main(String[] args) {
-    // ? 向上造型,p调用的是子类NewClass中的函数(多态)
     try {
-      LatestArrayIndex p = new NewClass();//*NewClass可能有异常
-      System.out.println(p);  //默认toString输出p的package和内存ID
-    } catch (OpenException e) {
+      //? NewClass可能有异常,向上造型(多态)
+      LatestArrayIndex p = new NewClass();
+      System.out.println(p);
+    } catch (BigException e) {
       e.printStackTrace();
     }
   }

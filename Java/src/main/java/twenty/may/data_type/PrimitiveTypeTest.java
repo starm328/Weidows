@@ -2,9 +2,12 @@
  * @Author: Weidows
  * @Date: 2020-07-25 13:27:42
  * @LastEditors: Weidows
- * @LastEditTime: 2020-09-09 22:16:56
+ * @LastEditTime: 2020-10-20 17:59:20
  * @FilePath: \Weidows\Java\src\main\java\twenty\may\data_type\PrimitiveTypeTest.java
- */ 
+ * 
+ * 
+ * 各种数据类型及其内存大小
+ */
 package twenty.may.data_type;
 
 public class PrimitiveTypeTest {
@@ -60,7 +63,7 @@ public class PrimitiveTypeTest {
 
     // 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台
     System.out.println("最大值：Character.MAX_VALUE=" + (int) Character.MAX_VALUE);
-    
+
     // boolean布尔类型只能是true/false(不同于C语言可以用0/非0表示)
   }
 }
