@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-05-29 01:11:22
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-20 17:56:38
+ * @LastEditTime: 2020-10-23 19:24:36
  * @FilePath: \Weidows\Java\src\main\java\twenty\may\object_generator\Puppy.java
  * 
  * 
@@ -24,7 +24,7 @@ public class Puppy {
 
   public static void main(final String[] args) {
     Puppy myPuppy = new Puppy("tonny");
-    /* 前一个Puppy是类名,后一个是调用构造函数 */
+    /* 前一个Puppy是类名,后一个是调用构造方法 */
     myPuppy.putName();
   }
 }
