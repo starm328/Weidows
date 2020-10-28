@@ -21,3 +21,11 @@
   <summary>安装(可选)</summary>
   这里写内容
 </details>
+
+
+
+# 图床需求
+  - 1. 层级目录分明
+  - 2. 可根据层级生成对应URL
+  - 3. 由JsDelivr加速/GitHub直链/Gitee直链
+  - 4. 必须满足可多选添加/文件夹添加

@@ -13,9 +13,7 @@ import java.util.Scanner;
 public class IoStream {
   /**
    * *流的基础类 InputStream & OutputStream
-   * 
    * @throws IOException //不知道干啥用的,throws生成的注释
-   * 
    */
   public static void main(String[] args) throws IOException {
     Scanner in = new Scanner(System.in);// 这里System.in输入流交给Scanner
