@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-29 00:11:58
  * @FilePath: \Weidows\Java\src\main\java\twenty\august\stream\FileApplication.java
  */
-package twenty.august.stream;
+package twenty.october.stream;
 
 import java.io.File;
 
@@ -27,7 +27,7 @@ public class FileApplication {
   }
 
   public static void main(String[] args) {
-    File file = new File("./Java/src/main/java/twenty/august/stream");
+    File file = new File("./Java/src/main/java/twenty/october/stream");
     run(file);
   }
 }
