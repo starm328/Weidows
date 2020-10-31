@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-08-09 18:42:41
  * @LastEditors: Weidows
- * @LastEditTime: 2020-08-09 19:57:34
+ * @LastEditTime: 2020-10-31 16:22:08
  * @FilePath: \Weidows\Java\src\main\java\demos\snake_game\snake\SnakeGrid.java
  */
 package demos.snake_game.snake;
@@ -30,7 +30,7 @@ public class SnakeGrid extends JPanel {
   Food food = new Food();
   Snake snake = new Snake(food);//创建蛇
   ImageIcon image = new ImageIcon("./Java/image/SnakeGame/sky.jpg");//图片文件地址,与json大同小异,都是以工作区为root
-  File f = new File("./Java/audio/SankeGame/music.wav");//音乐文件地址
+  File f = new File("./Java/audio/SnakeGame/music.wav");//音乐文件地址
   SnakeThread snakeThread = new SnakeThread();
 
   SnakeGrid() {

@@ -2,9 +2,9 @@
  * @Author: Weidows
  * @Date: 2020-10-29 23:17:55
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-30 00:12:41
+ * @LastEditTime: 2020-10-30 23:55:44
  * @FilePath: \Weidows\Java\src\main\java\twenty\october\stream\BufferStream.java
- * @Description: 缓冲流
+ * @Description: Buffer缓冲流
  */
 package twenty.october.stream;
 
