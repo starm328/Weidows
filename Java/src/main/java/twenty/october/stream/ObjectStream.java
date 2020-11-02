@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-10-31 23:45:48
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-01 00:22:06
+ * @LastEditTime: 2020-11-01 09:38:41
  * @FilePath: \Weidows\Java\src\main\java\twenty\october\stream\ObjectStream.java
  * @Description:对象序列/反序列化流
  * 要让对象可序列化,那个类必须implements Serializable接口
