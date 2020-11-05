@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-11-03 23:38:42
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-04 00:07:18
+ * @LastEditTime: 2020-11-05 12:51:30
  * @FilePath: \Weidows\Java\src\main\java\twenty\november\thread\producer_and_customer\Test.java
  * @Description:生产者与消费者模型
  */
@@ -11,6 +11,7 @@ package twenty.november.thread.producer_and_customer;
 public class Test {
   public static void main(String[] args) {
     Clerk clerk = new Clerk();
+
     new Thread(new Runnable() {
       @Override
       public void run() {

@@ -4,4 +4,5 @@ db.json
 *.log
 
 .vscode
-Java/target/classes
+.idea
+Java/target
