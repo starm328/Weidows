@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-20 21:18:22
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\design_principle\newcastle\HandlerHelp.java
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 public class HandlerHelp extends Handler {
   public HandlerHelp(Game game) {

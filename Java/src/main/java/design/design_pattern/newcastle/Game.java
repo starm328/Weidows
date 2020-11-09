@@ -4,12 +4,12 @@
  * @LastEditors: Weidows
  * @LastEditTime: 2020-07-18 16:23:18
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\design_principle\newcastle\Game.java
- * 
- * 
+ *
+ *
  * 代码类与类之间耦合(关联性)越低越好,接口越少越好->封装
  * 有效方法是所有成员变量尽可能的私有(private)
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -123,7 +123,7 @@ public class Game {
           else if (words[0].equals("go"))
               this.goRoom(words[1]);
           else if (words[0].equals("bye")) {
-              
+
               in.close();
               break;
           } else

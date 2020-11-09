@@ -58,13 +58,13 @@ public class FoxAndRabbit {
     StepListener stepListener = new StepListener();
     btnStep.addActionListener(stepListener);
     /**
-     * ?这里实际上是做了个 内部 匿名 类(此处是函数内部类,只能访问函数内final变量)
+     * 这里实际上是做了个 内部 匿名 类(此处是函数内部类,只能访问函数内final变量)
      * *其作用相当于上面的那个类
      * *都是实现了interface ActionListener,Override了ActionPerformed()
      * *addActionListener(参数都是ActionListener new 的对象)
      * *只不过上面写的内部类StepListener有个名字而已
      * !这种匿名类implements实现的是interface接口,也可以继承为子类
-     * ?Swing消息机制广泛使用匿名类(因大量使用新类,不用为新类起名字了)
+     * Swing消息机制广泛使用匿名类(因大量使用新类,不用为新类起名字了)
     btnStep.addActionListener( new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {

@@ -40,7 +40,7 @@ class NewClass extends LatestArrayIndex {
   public NewClass() throws SmallException,BigException {
     throw new BigException("正常抛出的异常");//? 自定义异常信息
   }
-  
+
   @Override
   public void f() throws SmallException {
   }
@@ -49,11 +49,11 @@ class NewClass extends LatestArrayIndex {
 class Test {
   public static void main(String[] args) {
     /**
-     * ? main方法上也可以throw exception,但是会抛出到JVM上,无法处理异常导致Error
+     *  main方法上也可以throw exception,但是会抛出到JVM上,无法处理异常导致Error
      */
     try {
       /**
-       * ? NewClass有异常(构造函数抛出的)
+       *  NewClass有异常(构造函数抛出的)
        * ! 很重要得一点是如果try{}里面某条语句catch到exception,则不会继续执行下面的语句(sysout(p))
        */
       LatestArrayIndex p = new NewClass();

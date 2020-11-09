@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-20 21:19:34
  * @FilePath: \Weidows\Java\src\main\java\design\design_principle\newcastle\Handler.java
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 public class Handler {
   protected Game game;

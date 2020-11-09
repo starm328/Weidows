@@ -14,8 +14,8 @@ import java.io.IOException;
 public class FileIoStream {
   /**
    * * 文件流: FileInputStream & FileOutputStream(实际工程不会使用了)
-   * ? 更常用的是在内存数据或通信数据上建立的流(Exp.数据库二进制io,网络端口通信)
-   * ? 具体的io会具有更专业的特殊的类(Exp.配置文件,日志文件)
+   *  更常用的是在内存数据或通信数据上建立的流(Exp.数据库二进制io,网络端口通信)
+   *  具体的io会具有更专业的特殊的类(Exp.配置文件,日志文件)
    */
   public static void main(String[] args) {
     byte[] buf = new byte[10];

@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class StreamFilter {
   /**
-   * ? 流过滤器是以套娃形式把一种数据流转变成其他类型的方法
+   *  流过滤器是以套娃形式把一种数据流转变成其他类型的方法
    */
   public static void main(String[] args) {
     byte[] byteArray = new byte[10];

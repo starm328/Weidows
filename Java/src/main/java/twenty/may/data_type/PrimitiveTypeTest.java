@@ -2,16 +2,16 @@
  * @Author: Weidows
  * @Date: 2020-07-25 13:27:42
  * @LastEditors: Weidows
- * @LastEditTime: 2020-10-20 17:59:20
+ * @LastEditTime: 2020-11-08 23:19:00
  * @FilePath: \Weidows\Java\src\main\java\twenty\may\data_type\PrimitiveTypeTest.java
- * 
- * 
+ *
+ *
  * 各种数据类型及其内存大小
  */
 package twenty.may.data_type;
 
 public class PrimitiveTypeTest {
-  public static void main(String[] args) {
+  public static void test() {
     // byte
     System.out.println("基本类型：byte 二进制位数：" + Byte.SIZE);
     System.out.println("包装类：java.lang.Byte");
@@ -63,7 +63,18 @@ public class PrimitiveTypeTest {
 
     // 以数值形式而不是字符形式将Character.MAX_VALUE输出到控制台
     System.out.println("最大值：Character.MAX_VALUE=" + (int) Character.MAX_VALUE);
-
-    // boolean布尔类型只能是true/false(不同于C语言可以用0/非0表示)
+  }
+  public static void main(String[] args) {
+    test();
+    /**
+     * boolean布尔类型只能是true/false(不同于C语言可以用0/非0表示)
+     * ! 涉及金融方面的数值计算必须用BigDecimal
+     *
+     * ! 进制表示:
+     *  二进制: 0b
+     *  八进制: 0
+     *  十六进制: 0x
+     *
+     */
   }
 }

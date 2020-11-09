@@ -17,7 +17,7 @@ public class Generic_method {
 
   /**
    * / 带返回值
-   * ?<p> 需要注意单凭有无返回值无法Overwrite方法,因为参数区分不开
+   * <p> 需要注意单凭有无返回值无法Overwrite方法,因为参数区分不开
    */
   public <T> T test_1(T t) {
     return t;

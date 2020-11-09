@@ -4,8 +4,8 @@
  * @LastEditors: Weidows
  * @LastEditTime: 2020-10-20 21:09:40
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\myabstract\Shape.java
- * 
- * 
+ *
+ *
  * 抽象类,抽象函数
  */
 package twenty.july.myabstract;
@@ -20,7 +20,7 @@ public abstract class Shape {
    * *Shape s 这里s变量可以管理Shape所有非抽象子类的对象
    * !继承抽象类的所有子类必须覆盖(实现)父类中的抽象函数,否则子类必须是抽象类
    *
-   * ?两种抽象概念:
+   * 两种抽象概念:
    *      1.与具体相对,表示抽象概念而非实体
    *      2.与细节相对,表示在一定程度上忽略细节着眼大体
    */

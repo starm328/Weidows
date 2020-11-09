@@ -17,8 +17,8 @@ public class IOStreams {
   public static void main(String[] args) {
     /**
      * ! All tested - No exception.
-     * ? <p>注意文件当指定目录有同名文件时,写入操作会覆盖那个文件.
-     * ? <p>读取文件时指定目录不存在那个文件的话会报错.
+     *  <p>注意文件当指定目录有同名文件时,写入操作会覆盖那个文件.
+     *  <p>读取文件时指定目录不存在那个文件的话会报错.
      */
     String inputPath = "./Java/src/main/java/twenty/october/stream/1.txt",
         outputPath = "./Java/src/main/java/twenty/october/stream/2.txt";

@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-20 21:19:13
  * @FilePath: \Weidows\Java\src\main\java\design\design_principle\castle\Room.java
  */
-package design.design_principle.castle;
+package design.design_pattern.castle;
 
 public class Room {
   public String description;

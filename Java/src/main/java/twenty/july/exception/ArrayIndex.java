@@ -33,7 +33,7 @@ public class ArrayIndex {
     } catch (ArrayIndexOutOfBoundsException e) {
       System.out.println("catch正确的异常");
       /**
-       * ? 抛出异常,也就是令程序仍存在这个异常状态
+       *  抛出异常,也就是令程序仍存在这个异常状态
        * 如果这个异常执行到最外层main仍未得到解决,则程序报错终止
        */
       throw e;
@@ -44,7 +44,7 @@ public class ArrayIndex {
 class A {
   public static void main(String[] args) {
     /**
-    * ?try-catch异常捕捉
+    * try-catch异常捕捉
     * *try尝试,如果捕捉到catch对应的异常后执行catch后面的指令
     * *若异常无对应的catch,则该异常在此处不被catch,被throw到更外层(main方法)
     * !try所有异常都得到对应catch才能判定无异常,除非在catch中throw出异常

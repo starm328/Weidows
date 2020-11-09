@@ -4,7 +4,7 @@
  * @LastEditors: Weidows
  * @LastEditTime: 2020-10-08 00:06:16
  * @FilePath: \Github\Weidows\C++\Study\2020-4\5.string库与函数调用小调试.c
- * 
+ *
  * strlen; strcmp; strcpy; strcat; strchr; strstr;讲解
  */
 //库
@@ -124,10 +124,10 @@ void strchr_test(char *s, char c, int n)
 int main(int argc, char const *argv[])
 {
   /**
-   * ? putchar() & getchar() & gets() & puts()
+   *  putchar() & getchar() & gets() & puts()
    *    char a = getchar(); //记好接收方式
    *    putchar(a); //输出方式(单字符)
-   * 
+   *
    *    char *b;//这样定义可以当做字符串数组用(当做函数的参数传入时必须已被declare)
    *    gets(b);//字符串中有空格时,scanf就鸡肋了,gets专业读取字符串(但*b这种方式会出错)
    *    puts(b);  //输出字符串

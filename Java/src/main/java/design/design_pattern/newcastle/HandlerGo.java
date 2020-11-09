@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-07-18 16:23:38
  * @FilePath: \Weidows\Java\src\main\java\twenty\july\design_principle\newcastle\HandlerGo.java
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 public class HandlerGo extends Handler {
   public HandlerGo(Game game) {

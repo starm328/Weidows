@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-07-08 23:31:55
  * @FilePath: \Weidows\src\twenty\july\f设计原则\newcastle\HandlerBye.java
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 public class HandlerBye extends Handler {
   public HandlerBye(Game game) {

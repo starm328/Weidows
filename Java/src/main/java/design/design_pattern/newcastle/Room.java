@@ -5,7 +5,7 @@
  * @LastEditTime: 2020-10-20 21:20:07
  * @FilePath: \Weidows\Java\src\main\java\design\design_principle\newcastle\Room.java
  */
-package design.design_principle.newcastle;
+package design.design_pattern.newcastle;
 
 public class Room {
   /*
@@ -55,10 +55,10 @@ public class Room {
      * 一般不会用String这样+++字符串,系统资源开销大
      * 返回字符串应是方向,而不是northExit(之类的)对象的内容
      * String这种类的对象无法修改...每次+=实际上是产生一个新的对象
-     * 
+     *
      * #重要# 当需要产生一个可修改的字符串时StringBuffer更好
-     * 
-     * 
+     *
+     *
      */
 
     //方案二(优化)

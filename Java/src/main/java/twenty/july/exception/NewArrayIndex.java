@@ -16,8 +16,8 @@ public class NewArrayIndex {
 
   /**
    * !如果需要在程序内部throw一个异常,则需要throws declaration或者放在try-catch里
-   * ? throws或catch的东西是一个继承自Throwable的一个子类(的对象)
-   * ? throws声明后也可以不throw异常(throws只是声明函数 "可能" 会存在异常)
+   *  throws或catch的东西是一个继承自Throwable的一个子类(的对象)
+   *  throws声明后也可以不throw异常(throws只是声明函数 "可能" 会存在异常)
    */
   public static void readFile() throws OpenException, CloseException {
     if (open() == -1) {
@@ -35,7 +35,7 @@ public class NewArrayIndex {
 
   public static void main(String[] args) {
     /**
-     * ?声明了throws的函数必须在try里调用,而且必须给全throws的对应catch
+     * 声明了throws的函数必须在try里调用,而且必须给全throws的对应catch
      * *catch exception是从上到下顺序,某异常捕捉到了就不会再次被捕捉
      * !父类的catch可以捕捉子类的exception,所以父类的catch不能写在子类上面
      */

@@ -18,14 +18,14 @@ import java.util.Scanner;
 
 /**
  * * 二进制用的是Stream,处理文本io采用Reader/Writer(处理Unicode字符集)
- * ?
+ *
  */
 public class TextStream {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     /**
      * * 由于编码问题很多文件无法直接用Reader/Writer处理,需要在中间借用Stream
-     * ? OutputStream是Stream与Writer之间的桥梁
+     *  OutputStream是Stream与Writer之间的桥梁
      */
     try {
       //!输出流到文件

@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-11-03 21:00:34
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-03 23:27:06
+ * @LastEditTime: 2020-11-06 09:46:35
  * @FilePath: \Weidows\Java\src\main\java\twenty\november\thread\bank\Test.java
  * @Description:
  */

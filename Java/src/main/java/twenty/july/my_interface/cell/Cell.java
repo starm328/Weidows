@@ -19,8 +19,8 @@ public interface Cell {//注意这里不能写成interface class
    */
   /**
    * !注意这里函数可以不用写函数前缀,只需要写返回值类型
-   * ?抽象类无函数主体,只需声明函数原型,实现抽象类/接口的类都必须Override所有抽象方法,否则此子类仍为抽象类
-   * ?abstract与final是冲突对立关系,抽象是用来被继承或重写的,final相反是不让继承/重写的
+   * 抽象类无函数主体,只需声明函数原型,实现抽象类/接口的类都必须Override所有抽象方法,否则此子类仍为抽象类
+   * abstract与final是冲突对立关系,抽象是用来被继承或重写的,final相反是不让继承/重写的
    */
   void draw(Graphics g, int x, int y, int size);
 }

@@ -2,10 +2,10 @@
  * @Author: Weidows
  * @Date: 2020-07-08 08:30:19
  * @LastEditors: Weidows
- * @LastEditTime: 2020-07-18 16:21:50
- * @FilePath: \Weidows\Java\src\main\java\twenty\july\design_principle\castle\Game.java
+ * @LastEditTime: 2020-11-08 23:59:22
+ * @FilePath: \Weidows\Java\src\main\java\design\design_pattern\castle\Game.java
  */
-package design.design_principle.castle;
+package design.design_pattern.castle;
 
 import java.util.Scanner;
 
