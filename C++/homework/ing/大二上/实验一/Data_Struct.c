@@ -4,11 +4,9 @@
  * @LastEditors: Weidows
  * @LastEditTime: 2020-10-18 00:02:57
  * @FilePath: \Weidows\C++\homework\ing\Data_Struct.c
- * 
- * 
- * 
- * PS: main()里面一次性调用所有函数有点混乱,都给注释掉了,想用哪个消掉注释就好,函数间无干扰
+ * @Description:main()里面一次性调用所有函数有点混乱,都给注释掉了,想用哪个消掉注释就好,函数间无干扰
  */
+
 //!库
 #include <math.h>
 #include <stdio.h>
@@ -74,7 +72,7 @@ int calculate_days(Date date)
   return (date.year % 4 == 0 && date.year % 100 == 0 && date.year % 400 == 0) ? ret++ : ret;
 }
 
-/** 
+/**
  * 思考
  * 只有一个for循环,时间复杂度为 O(n)
  */

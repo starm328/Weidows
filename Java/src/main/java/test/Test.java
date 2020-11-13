@@ -36,7 +36,7 @@
  * @Author: Weidows
  * @Date: 2020-05-03 01:18:34
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-08 23:37:54
+ * @LastEditTime: 2020-11-10 23:56:11
  * @FilePath: \Weidows\Java\src\main\java\test\Test.java
  */
 package test;
@@ -48,6 +48,6 @@ public class Test {
     Scanner in = new Scanner(System.in);
 
     in.close();
-    System.out.println("Test");
+    System.out.println("我的Test");
   }
 }
