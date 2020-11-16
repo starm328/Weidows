@@ -13,7 +13,7 @@ cover: https://cdn.jsdelivr.net/gh/Weidows/Images/
 <!--
  * @Author: Weidows
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-16 01:18:23
+ * @LastEditTime: 2020-11-17 00:21:44
  * @FilePath: \Weidows\CSS\markdown\css.md
 -->
 
@@ -188,6 +188,100 @@ body > p {
       <li>li2</li>
       <li>li3</li>
     </ul>
+  </body>
+</html>
+```
+
+---
+
+## 4.属性选择器(常用)
+
+- 相当于 class + id 选择器
+
+```HTML
+<!--
+ * @Author: Weidows
+ * @Date: 2020-11-16 18:39:23
+ * @LastEditors: Weidows
+ * @LastEditTime: 2020-11-17 00:19:53
+ * @FilePath: \Weidows\CSS\Study\选择器\属性选择器\1.HTML
+ * @Description:
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 选中demo类下的a标签
+      这个不是讲解,这个只是页面初始化,好看些 */
+      .demo a {
+        float: left;
+        display: block;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        background: violet;
+        text-align: center;
+        color: gainsboro;
+        text-decoration: none;
+        margin-right: 10px;
+        font: bold 20px/50px Arial;
+      }
+
+      /*
+      = 是绝对等于
+      *= 是包含
+      ^= 以这个开头
+      $= 以这个结尾
+      */
+
+      /* 选中存在id属性的元素 */
+      a[id] {
+        /* background: yellow; */
+      }
+
+      /* 选中对应属性的元素(属性值可以使用正则表达式!!!) */
+      a[id="first"] {
+        /* background: yellow; */
+      }
+
+      /* 选中class中有links的元素 */
+      a[class*="links"] {
+        /* background: yellow; */
+      }
+
+      /* 以http开头的元素 */
+      a[herf^="http"] {
+        /* background: yellow; */
+      }
+
+      /* 以pdf结尾 */
+      a[herf$="pdf"] {
+        /* background: yellow; */
+      }
+    </style>
+  </head>
+  <body>
+    <p class="demo">
+      <a href="https://www.baidu.com" class="links item first" id="first">1</a>
+      <a
+        href="http://blog.kuangstudy.com"
+        class="links item active"
+        target="_blank"
+        title="test"
+        >2</a
+      >
+      <a here="images/123.html" class="links item">3</a>
+      <a here="images/123.png" class="links item">4</a>
+      <a here="images/123.jpg" class="links item">5</a>
+      <a here="abc" class="links item">6</a>
+      <a here="/a.pdf" class="links item">7</a>
+      <a here="/abc.pdf" class="links item">8</a>
+      <a here="abc.doc" class="links item">9</a>
+      <a here="abcd.doc" class="links item">10</a>
+    </p>
   </body>
 </html>
 ```
