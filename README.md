@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-07-27 10:28:29
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-19 00:01:33
+ * @LastEditTime: 2020-11-21 00:24:02
  * @FilePath: \Weidows\README.md
  * 这个markdown是显示在github-profile界面上的
 -->
@@ -11,7 +11,7 @@
 
 <center>
 
-![德丽莎](https://cdn.jsdelivr.net/gh/Weidows/Images/post/1/GitHub.jpeg)
+![GitHub](https://i.loli.net/2020/11/21/utsrDPeiMZhdAyv.jpg)
 
 </center>
 
