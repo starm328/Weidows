@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "Weidows",
+      "path": ".."
+    },
+    {
+      "path": "..\\..\\Github\\Blog"
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.cjson": "jsonc",
+      "*.wxss": "css",
+      "*.wxs": "javascript",
+      "stdlib.h": "c",
+      "string.h": "c",
+      "math.h": "c",
+      "stdio.h": "c",
+      "array": "c",
+      "string_view": "c",
+      "initializer_list": "c",
+      "utility": "c",
+      "string": "c",
+      "stdc++.h": "c"
+    },
+    "liveServer.settings.multiRootWorkspaceName": "Blog"
+  }
+}

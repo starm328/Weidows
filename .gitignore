@@ -3,6 +3,4 @@ Thumbs.db
 db.json
 *.log
 
-.vscode
-.idea
 Java/target
