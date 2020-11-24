@@ -2,8 +2,8 @@
  * @Author: Weidows
  * @Date: 2020-07-27 10:28:29
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-23 23:07:45
- * @FilePath: \Weidows\README.md
+ * @LastEditTime: 2020-11-24 23:06:43
+ * @FilePath: \undefinedd:\Game\Demo\Weidows\README.md
  * 这个markdown是显示在github-profile界面上的
 -->
 
@@ -11,7 +11,7 @@
 
 <center>
 
-![GitHub](https://i.loli.net/2020/11/21/utsrDPeiMZhdAyv.jpg)
+![GitHub](https://raw.githubusercontent.com/Weidows/Images/main/PicGo/utsrDPeiMZhdAyv.jpg)
 
 </center>
 
