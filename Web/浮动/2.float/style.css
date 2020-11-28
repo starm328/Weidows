@@ -9,15 +9,22 @@ div {
 
 .layer01 {
   border: 1px dashed #f00;
+  display: inline-block;
+  float: left;
 }
 .layer02 {
   border: 1px dashed #00f;
+  display: inline-block;
+  float: left;
 }
 .layer03 {
   border: 1px dashed #0f0;
+  display: inline-block;
+  float: left;
 }
 .layer04 {
   border: 1px dashed #666;
   font-size: 12px;
   line-height: 23px;
+  display: inline-block;
 }

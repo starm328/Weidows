@@ -22,8 +22,9 @@
       "initializer_list": "c",
       "utility": "c",
       "string": "c",
-      "stdc++.h": "c"
+      "stdc++.h": "c",
+      "ctype.h": "c"
     },
-    "liveServer.settings.multiRootWorkspaceName": "Blog"
+    "liveServer.settings.multiRootWorkspaceName": "Weidows"
   }
 }
