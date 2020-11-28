@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-07-27 10:28:29
  * @LastEditors: Weidows
- * @LastEditTime: 2020-11-28 16:42:25
+ * @LastEditTime: 2020-11-28 16:47:17
  * @FilePath: \undefinedd:\Game\Demo\Weidows\README.md
  * 这个markdown是显示在github-profile界面上的
 -->
@@ -15,9 +15,9 @@
 
 <h1 align="center" style="color:red;">
 
-<a href="https://weidows.github.io" target="_blank" style="color:deeppink;font-style:italic;">My Website /</a>
+<a href="https://weidows.github.io" target="_blank" style="color:deeppink;">*My Website /*</a>
 ⭐️ Weidow's 🌈Mind ⭐️
-<a href="https://weidows.github.io/tags/about" target="_blank" style="color:chartreuse;font-style:italic;">/ About Me</a>
+<a href="https://weidows.github.io/tags/about" target="_blank" style="color:chartreuse;">*/ About Me*</a>
 
 </h1>
 </div>
