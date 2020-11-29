@@ -10,7 +10,7 @@
 <div width="100% height="100%" style="background-color: #00dbde;background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);">
 <a href="https://weidows.github.io" target="_blank">
 
-![GitHub](https://raw.githubusercontent.com/Weidows/Images/main/PicGo/utsrDPeiMZhdAyv.jpg)
+![GitHub](https://image.thum.io/get/width/1024/crop/768/https://github.com/Weidows)
 </a>
 
 <h1 align="center" style="color:red;">
