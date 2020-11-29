@@ -6,6 +6,9 @@
     },
     {
       "path": "..\\..\\Github\\Blog"
+    },
+    {
+      "path": "..\\..\\Github\\About-me"
     }
   ],
   "settings": {
@@ -25,6 +28,6 @@
       "stdc++.h": "c",
       "ctype.h": "c"
     },
-    "liveServer.settings.multiRootWorkspaceName": "Weidows"
+    "liveServer.settings.multiRootWorkspaceName": "About-me"
   }
 }
