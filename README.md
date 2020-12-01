@@ -22,9 +22,9 @@
 
   ⭐️ Weidow's Mind ⭐️
 
-  <a href="https://weidows.github.io" target="_blank" style="color:deeppink;">_My Website /*_</a>
+  <a href="https://weidows.github.io" target="_blank" style="color:deeppink;">_/* My Website_</a>
 
-  <a href="https://weidows.github.io/About-me" target="_blank" style="color:chartreuse;">_*/ About Me_</a>
+  <a href="https://weidows.github.io/About-me" target="_blank" style="color:chartreuse;">_About Me */_</a>
   <!-- 访问计数 -->
   <img src="https://profile-counter.glitch.me/{Weidows}/count.svg" />
   </h1>
