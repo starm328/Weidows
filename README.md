@@ -2,7 +2,7 @@
  * @Author: Weidows
  * @Date: 2020-07-27 10:28:29
  * @LastEditors: Weidows
- * @LastEditTime: 2020-12-01 18:58:36
+ * @LastEditTime: 2020-12-01 19:02:06
  * @FilePath: \Weidows\Others\test.md
  * 这个markdown是显示在github-profile界面上的
 -->
@@ -19,7 +19,8 @@
   </p> -->
 
   <h1 style="color:red;">
-  ⭐️ Weidow's 🌈Mind ⭐️
+
+  ⭐️ Weidow's Mind ⭐️
 
   <a href="https://weidows.github.io" target="_blank" style="color:deeppink;">_My Website /*_</a>
 
